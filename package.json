@@ -1,0 +1,32 @@
+{
+  "name": "api-arduino-data-handler",
+  "version": "1.0.0",
+  "description": "Arduino Api - Data Handler",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soytech-solutions/api-arduino-data-handler.git"
+  },
+  "keywords": [
+    "api",
+    "arduino",
+    "data-handler",
+    "insert",
+    "db-connection"
+  ],
+  "author": "SoyTech Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/soytech-solutions/api-arduino-data-handler/issues"
+  },
+  "homepage": "https://github.com/soytech-solutions/api-arduino-data-handler#readme",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mysql2": "^3.9.3",
+    "serialport": "^12.0.0"
+  }
+}
