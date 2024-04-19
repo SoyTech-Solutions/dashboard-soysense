@@ -1,0 +1,125 @@
+body{
+    display: flex;
+    flex-direction: row;
+}
+::-webkit-scrollbar {
+    width: 5px; 
+}
+
+::-webkit-scrollbar-track {
+  background: #6f7580;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #202A3F;
+  border: 1px solid #6f7580;
+  border-radius: 5px;
+}
+.side-bar{
+    width: 220px;
+    height: 100%;
+    background-color: #202A3F;
+
+}
+.logo-wrapper{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #20b8ff18;
+}
+
+.logo-wrapper > img{
+    width: 45%;
+}
+.profile-wrapper{
+    width: 100%;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.profile-picture{
+    background-color: black;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #20b8ff;
+}
+.profile-picture > img{
+    width: 100%;
+}
+.profile-wrapper span{
+    margin-top: 5px;
+    font-size: 8px;
+    text-transform: uppercase;
+    font-family: 'Montserrat',sans-serif;
+    color: #20b8ff;
+}
+.profile-wrapper h4{
+    font-size: 13px;
+    text-transform: uppercase;
+    font-family: 'Montserrat',sans-serif;
+    color: #FFF;
+}
+
+.line-side-bar{
+    width: 150px;
+    height: 1px;
+    border-radius: 50%;
+    background-color: #20b8ff;
+    margin: 0 auto;
+}
+
+.accordion-menu{
+    margin-top: 15px;
+    list-style: none;
+}
+
+.nav-side-bar{
+    background-color: green;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+}
+.accordion-menu{
+    background-color: #fff;
+    padding: 5px;
+}
+
+.accordion-item{
+    width: 140px;
+    border: 1px solid black;
+    background-color: blue;
+}
+.accordion-item-header{
+    width: 100%;
+    height: 35px;   
+}
+.accordion-submenu{
+    background-color: yellow;
+    display: none;
+    list-style: none;
+    height: auto;
+}
+.accordion-subitem{
+    height: 35px;
+    background-color: #fff;
+}
+.accordion-subitem  a{
+    display: inline-block;
+    width: 100%;
+    height: 35px;
+    background-color: #c73131;
+    display: flex;
+    align-items: center;
+}
+.accordion-item.drop-active > .accordion-submenu{
+    display: block;
+    height: auto;
+}
