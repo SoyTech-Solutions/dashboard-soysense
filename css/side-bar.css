@@ -19,7 +19,7 @@ body{
     width: 220px;
     height: 100%;
     background-color: #202A3F;
-
+    position: relative;
 }
 .logo-wrapper{
     width: 100%;
@@ -27,7 +27,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #20b8ff18;
+    background-color: #203751;
 }
 
 .logo-wrapper > img{
@@ -80,11 +80,11 @@ body{
     /* gap: 5px; */
     margin-top: 15px;
     list-style: none;
-    padding-left: 5px;
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
     width: 100%;
     align-items: center;
+    gap: 5px;
 }
 
 .nav-side-bar{
@@ -92,7 +92,9 @@ body{
     flex-direction: column;
     align-items: center;
     gap: 10px;
-
+    overflow-y: auto;
+    height: 350px;
+    margin-top: 10px;
 }
 .accordion-item {
     width: 170px;
@@ -102,22 +104,28 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
+    
 }
 .accordion-item a{
     color: #FFF;
     text-decoration: none;
 }
 .nav-normal-item{
-    width: 170px;
+    padding-left: 55px;
+    width: 100%;
     border: none;
-    background-color: #34456b;
     cursor: pointer;
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-left: 10px;
     height: 35px;
     gap: 5px;
+    transition: 0.3s all;
+}
+.nav-normal-item:hover{
+    border-left: 1px solid #20b8ff;
+    background-color: #224185;
 }
 .nav-normal-item a{
     color: #FFF;
@@ -133,13 +141,16 @@ body{
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-left: 10px;
     gap: 5px;
-}
-.accordion-item-header{
+    padding-left: 55px;
     color: #FFF;
     font-size: 13px;
     font-weight: bold;
+    transition: 0.3s all;
+}
+.accordion-item-header:hover{
+    border-left: 1px solid #20b8ff;
+    background-color: #224185;
 }
 .accordion-submenu{
     background-color: yellow;
@@ -156,12 +167,53 @@ body{
     display: inline-block;
     width: 100%;
     height: 35px;
-    background-color: #c73131;
+    background-color: #1a3266;
     display: flex;
     align-items: center;
-    padding-left: 15px;
+    padding-left: 75px;
+    transition: 0.3s all;
+}
+.accordion-subitem  a:hover{
+    background-color: #14264e;
+
+}
+.accordion-item.drop-active > .accordion-item-header{
+    border-left: 2px solid #20b8ff;
+    background-color: #224185;
+    border-bottom: 1px solid #14264e;
 }
 .accordion-item.drop-active > .accordion-submenu{
     display: block;
     height: auto;
+    
+}
+.dash-on{
+    border-left: 2px solid #20b8ff;
+    background-color: #224185;
+}
+.footer-aside{
+    height: 45px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    z-index: 1;
+}
+.footer-aside .logout-container{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.logout-container a{
+    text-decoration: none;
+    color: #f13939;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 13px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }

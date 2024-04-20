@@ -8,7 +8,8 @@
     <script src="./js/dashboard.js" defer></script>
 
     <link rel="stylesheet" href="./css/global-style.css">
-    <link rel="stylesheet" href="./css/dashboard-style.css">
+    <link rel="stylesheet" href="./css/side-bar.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
 
     <style>
         canvas {
@@ -35,7 +36,7 @@
         <div class="line-side-bar"></div>
         <nav class="nav-side-bar">
             <ul class="accordion-menu">
-                <li class="nav-normal-item">
+                <li class="nav-normal-item dash-on">
                     <img width="17" height="17" src="https://img.icons8.com/material-outlined/24/FFFFFF/dashboard-layout.png" alt="dashboard-layout"/>
                     <a href="">Dashboard</a>
                 </li>
@@ -46,30 +47,70 @@
                     </div>
                     <ul class="accordion-submenu">
                         <li class="accordion-subitem">
-                            <a href="">Exemplo 1 1</a>
+                            <a href="">&bull;&nbsp;Fazenda X</a>
                         </li>
                         <li class="accordion-subitem">
-                            <a href="">Exemplo 1 2</a>
+                            <a href="">&bull;&nbsp;Fazenda Y</a>
                         </li>
                         <li class="accordion-subitem">
-                            <a href="">Exemplo 1 3</a>
+                            <a href="">&bull;&nbsp;Fazenda Z</a>
                         </li>
                     </ul>
                 </li>
                 <li class="accordion-item">
-                    <div class="accordion-item-header">Exemplo</div>
+                    <div class="accordion-item-header">
+                        <img width="17" height="17" src="https://img.icons8.com/material-outlined/24/FFFFFF/document--v1.png" alt="document--v1"/>
+                        <span>Relatório</span>
+                    </div>
                     <ul class="accordion-submenu">
-                        <li class="accordion-subitem"><a href="">Exemplo 1 1</a></li>
-                        <li class="accordion-subitem"><a href="">Exemplo 1 2</a></li>
-                        <li class="accordion-subitem"><a href="">Exemplo 1 3</a></li>
+                        <li class="accordion-subitem">
+                            <a href="">&bull;&nbsp;Desempenho</a>
+                        </li>
+                        <li class="accordion-subitem">
+                            <a href="">&bull;&nbsp;Rentabilidade</a>
+                        </li>
+                        <li class="accordion-subitem">
+                            <a href="">&bull;&nbsp;Anomalias</a>
+                        </li>
                     </ul>
                 </li>
-
+                <li class="nav-normal-item">
+                    <img width="17" height="17" src="https://img.icons8.com/material-outlined/24/FFFFFF/fine-print.png" alt="fine-print"/>                    
+                    <a href="">Benchmarking</a>
+                </li>
+                <li class="accordion-item">
+                    <div class="accordion-item-header">
+                        <img width="17" height="17" src="https://img.icons8.com/material-outlined/24/FFFFFF/settings--v1.png" alt="settings--v1"/>
+                        <span>Configuração</span>
+                    </div>
+                    <ul class="accordion-submenu">
+                        <li class="accordion-subitem">
+                            <a href="">&bull;&nbsp;Sensor</a>
+                        </li>
+                        <li class="accordion-subitem">
+                            <a href="">&bull;&nbsp;Monitor</a>
+                        </li>
+                        <li class="accordion-subitem">
+                            <a href="">&bull;&nbsp;Complexo</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </nav>
+        <div class="footer-aside">
+            <div class="logout-container">
+                <a href="#">
+                    <img width="20" height="20" src="https://img.icons8.com/ios-filled/50/f13939/logout-rounded.png" alt="logout-rounded"/>
+                    Sair
+                </a>
+            </div>
+        </div>
     </aside>
-    <main>
-        <!-- <section style="width:300px">
+    <main class="main-dashboard">
+
+
+        
+        <!-- <section style="width:300px;">
             <canvas id="dht11Umidade"></canvas>
         </section>
         <section style="width: 300px;">
