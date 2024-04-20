@@ -7,6 +7,8 @@
     <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
     <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
 
+    <script src="./js/dashboard.js" defer></script>
+
     <link rel="stylesheet" href="./css/global-style.css">
     <link rel="stylesheet" href="./css/side-bar.css">
     <link rel="stylesheet" href="./css/dashboard.css">
@@ -151,7 +153,7 @@
 
         <section class="temp-container">
             <div class="left-temp">
-                <h4>Temperatura (C°)</h4>
+                <h4>Temperatura Média (C°)</h4>
                 <section>
                     <canvas id="lm35Temperatura"></canvas>
                 </section>
@@ -162,7 +164,7 @@
 
         <section class="umid-container">
             <div class="left-umid">
-                <h4>Umidade (%)</h4>
+                <h4>Umidade Média (%)</h4>
                 <section>
                     <canvas id="dht11Umidade"></canvas>
                 </section>
@@ -177,26 +179,10 @@
         </section>
         <section style="width: 300px;">
             <canvas id="lm35Temperatura"></canvas>
-        </section> -->
+        </section>  -->
     </main>
 
     <script> 
-        const accordionItems = document.querySelectorAll('.accordion-item');
-
-        accordionItems.forEach(item => {
-          item.addEventListener('click', () => {
-            // Toggle active class on clicked item
-            item.classList.toggle('active');
-      
-            // Hide all other accordion content
-            const siblingContents = item.parentNode.querySelectorAll('.accordion-content');
-            siblingContents.forEach(content => {
-              if (content !== item.nextElementSibling) {
-                content.style.display = 'none';
-              }
-            });
-          });
-        });
         /* -- lm35Temperatura */
         var contextoLm35Temperatura = document.getElementById('lm35Temperatura').getContext('2d');
         var lm35Temperatura = new Chart(
@@ -321,11 +307,22 @@
             let minUmid = 10;
             let maxUmid = 15;
 
+            let somaTemp = 0;
+            let somaUmid = 0;
 
-            let num1 = parseInt(Math.random() * (maxUmid - minUmid) + minUmid);
-            let num2 = parseInt(Math.random() * (maxTemp - minTemp) + minTemp);
+            // supondo 10 sensores
+            for (let i = 0; i < 10; i++) {
+                // Gere valores aleatórios para cada sensor
+                let num1 = parseInt(Math.random() * (maxUmid - minUmid) + minUmid);
+                let num2 = parseInt(Math.random() * (maxTemp - minTemp) + minTemp);
+                somaTemp += num2;
+                somaUmid += num1;
+            } 
 
-            var valoresAleatorio = `${num1};${num2}`;
+            let mediaTemp = somaTemp / 10;
+            let mediaUmid = somaUmid / 10;
+
+            var valoresAleatorio = `${mediaUmid};${mediaTemp}`;
 
             valoresAleatorio = valoresAleatorio.split(';')
             console.log(valoresAleatorio);
