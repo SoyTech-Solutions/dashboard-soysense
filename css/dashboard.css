@@ -77,7 +77,65 @@
 
 .temp-container{
     width: 90%;
-    height: 400px;
-    margin: 30px auto 0 auto;
-    background-color: blue;
+    height: 350px;
+    margin: 30px auto 30px auto;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.temp-container h4{
+    text-align: center;
+    font-family: 'montserrat', Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+}
+.temp-container section{
+    margin: 20px auto 0 auto;
+    width: 95%;
+}
+.left-temp{
+    width: 50%;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 7px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.192);
+}
+.right-temp{
+    width: 50%;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 7px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.192);
+}
+
+
+.umid-container{
+    width: 90%;
+    height: 350px;
+    margin: 30px auto 30px auto;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.left-umid{
+    width: 50%;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 7px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.192);
+}
+.right-umid{
+    width: 50%;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 7px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.192);
+}
+.umid-container h4{
+    text-align: center;
+    font-family: 'montserrat', Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+}
+.umid-container section{
+    margin: 20px auto 0 auto;
+    width: 95%;
 }
