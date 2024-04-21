@@ -8,6 +8,7 @@
     <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
 
     <script src="./js/dashboard.js" defer></script>
+    <script src="./js/graficos-dashboard.js" defer></script>
 
     <link rel="stylesheet" href="./css/global-style.css">
     <link rel="stylesheet" href="./css/side-bar.css">
@@ -49,13 +50,13 @@
                     </div>
                     <ul class="accordion-submenu">
                         <li class="accordion-subitem">
+                            <a href="">&bull;&nbsp;Gerenciar </a>
+                        </li>
+                        <li class="accordion-subitem">
                             <a href="">&bull;&nbsp;Fazenda X</a>
                         </li>
                         <li class="accordion-subitem">
                             <a href="">&bull;&nbsp;Fazenda Y</a>
-                        </li>
-                        <li class="accordion-subitem">
-                            <a href="">&bull;&nbsp;Fazenda Z</a>
                         </li>
                     </ul>
                 </li>
@@ -122,7 +123,7 @@
 
                 </div>
                 <div class="summary-footer ">
-                    
+
                 </div>
             </div>
             <div class="summary-card">
@@ -159,6 +160,31 @@
                 </section>
             </div>
             <div class="right-temp">
+                <div class="header-right-temp">
+                    <canvas id="qtdLm35"></canvas>
+                </div>
+                <h4>Informação Geral</h4>
+                <section class="info-right-temp">
+                    <table class="table-temp">
+                        <tr>
+                            <th>Sensores</th><th>Ativo</th><th>modelo</th><th>Medição</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                11/1
+                            </td>
+                            <td>
+                                91%
+                            </td>
+                            <td>
+                                LM25
+                            </td>
+                            <td>
+                                Temperatura (C°)
+                            </td>
+                        </tr>
+                    </table>
+                </section>
             </div>
         </section>
 
@@ -170,169 +196,35 @@
                 </section>
             </div>
             <div class="right-umid">
+                <div class="header-right-umid">
+                    <canvas id="qtdDht11"></canvas>
+                </div>
+                <h4>Informação Geral</h4>
+                <section class="info-right-umid">
+                    <table class="table-umid">
+                        <tr>
+                            <th>Sensores</th><th>Desempenho</th><th>Modelo</th><th>Medição</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                21/9
+                            </td>
+                            <td>
+                                57%
+                            </td>
+                            <td>
+                                LM25
+                            </td>
+                            <td>
+                                Temperatura (C°)
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+            </div>
             </div>
         </section>
-
-
-        <!-- <section style="width:300px;">
-            <canvas id="dht11Umidade"></canvas>
-        </section>
-        <section style="width: 300px;">
-            <canvas id="lm35Temperatura"></canvas>
-        </section>  -->
     </main>
-
-    <script> 
-        /* -- lm35Temperatura */
-        var contextoLm35Temperatura = document.getElementById('lm35Temperatura').getContext('2d');
-        var lm35Temperatura = new Chart(
-            contextoLm35Temperatura,
-            {
-                type: 'line',
-                data: {
-                    datasets: [{
-                        label: 'Temperatura',
-                        type: 'line',
-                        borderColor: ['#ffd902'],
-                        backgroundColor: ['#ffe13588']
-                    }]
-                },
-                options: {
-                    scales: {
-                        xAxes: [{
-                            distribution: 'series',
-                            ticks: {
-                                beginAtZero: true,
-                                fontSize: 10
-                            }
-                        }],
-                        yAxes: [{
-                            scaleLabel: {
-                                display: true,
-                                labelString: 'Temperatura'
-                            },
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }]
-                    },
-                    animation: {
-                        duration: 0
-                    }
-                }
-            }
-        );
-
-
-        /* -- dht11Umidade -- */
-        var contextoDht11Umidade = document.getElementById('dht11Umidade').getContext('2d');
-        var dht11Umidade = new Chart(
-            contextoDht11Umidade,
-            {
-                type: 'line',
-                data: {
-                    datasets: [{
-                        label: 'Umidade',
-                        type: 'line',
-                        borderColor: ['#45b3e7'],
-                        backgroundColor: ['#45b4e794']
-                    }]
-                },
-                options: {
-                    scales: {
-                        xAxes: [{
-                            distribution: 'series',
-                            ticks: {
-                                beginAtZero: true,
-                                fontSize: 10
-                            }
-                        }],
-                        yAxes: [{
-                            scaleLabel: {
-                                display: true,
-                                labelString: 'Umidade',
-    
-                            },
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }]
-                    },
-                    animation: {
-                        duration: 0
-                    }
-                }
-            }
-        );
-
-
-        var paginacao = {};
-        var tempo = {};
-        function obterDados(grafico, valoresAleatorio) {
-            var valores = valoresAleatorio;
-            if (paginacao[valoresAleatorio] == null) {
-                paginacao[valoresAleatorio] = 0;
-            }
-            if (tempo[valoresAleatorio] == null) {
-                tempo[valoresAleatorio] = 0;
-            }
-            // Exibir à partir do último elemento exibido anteriormente
-            var ultimaPaginacao = paginacao[valoresAleatorio];
-            paginacao[valoresAleatorio] = valores.length;
-            var valores = valores.slice(ultimaPaginacao);
-            //Máximo de 60 itens exibidos no gráfico
-            if (grafico.data.labels.length == 10 && grafico.data.datasets[0].data.length == 10) {
-                grafico.data.labels.shift();
-                grafico.data.datasets[0].data.shift();
-            }
-
-
-            // capturar a hora
-            var dateObj = new Date();
-
-            var horas = dateObj.getHours();
-            var minutos = dateObj.getMinutes(); 
-            var segundos = dateObj.getSeconds();
-
-            grafico.data.labels.push(`${horas}:${minutos}`);
-            grafico.data.datasets[0].data.push(parseFloat(valoresAleatorio));
-            grafico.update();
-            
-        }
-
-        setInterval(() => {
-            let minTemp = 20;
-            let maxTemp = 30;
-
-            let minUmid = 10;
-            let maxUmid = 15;
-
-            let somaTemp = 0;
-            let somaUmid = 0;
-
-            // supondo 10 sensores
-            for (let i = 0; i < 10; i++) {
-                // Gere valores aleatórios para cada sensor
-                let num1 = parseInt(Math.random() * (maxUmid - minUmid) + minUmid);
-                let num2 = parseInt(Math.random() * (maxTemp - minTemp) + minTemp);
-                somaTemp += num2;
-                somaUmid += num1;
-            } 
-
-            let mediaTemp = somaTemp / 10;
-            let mediaUmid = somaUmid / 10;
-
-            var valoresAleatorio = `${mediaUmid};${mediaTemp}`;
-
-            valoresAleatorio = valoresAleatorio.split(';')
-            console.log(valoresAleatorio);
-
-
-            obterDados(dht11Umidade, valoresAleatorio[0]);
-            obterDados(lm35Temperatura, valoresAleatorio[1]);
-        }, 1000);
-
-    </script>
 </body>
 
 </html>

@@ -77,7 +77,7 @@
 
 .temp-container{
     width: 90%;
-    height: 350px;
+    height: 370px;
     margin: 30px auto 30px auto;
     display: flex;
     flex-direction: row;
@@ -93,42 +93,82 @@
     width: 95%;
 }
 .left-temp{
-    width: 50%;
+    width: 60%;
     height: 100%;
     background-color: #ffffff;
     border-radius: 7px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.192);
 }
 .right-temp{
-    width: 50%;
+    width: 40%;
     height: 100%;
     background-color: #ffffff;
     border-radius: 7px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.192);
+    overflow: hidden;
+}
+.right-temp h4{
+    margin-top: 10px;
+}
+.header-right-temp{
+    padding-top: 20px;
+    height: 220px;
+    width: 100%;
 }
 
+.info-right-temp{
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+.table-temp {
+    border-collapse: collapse;
+    width: 85%;
+    margin: 0 auto 0 auto;
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    
+}
+.table-temp th, td {
+    padding: 0 20px 0 20px;
+    padding: 5px;
+    text-align: center;
+}
+.table-temp th {
+    background-color: #6da0ff;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 14px;
+}
+.table-temp td {
+    font-weight: 500;
+    font-size: 14px;
+    padding: 10px;
+}
+
+/* umid side */
 
 .umid-container{
     width: 90%;
-    height: 350px;
+    height: 370px;
     margin: 30px auto 30px auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     gap: 10px;
 }
+
 .left-umid{
-    width: 50%;
+    width: 60%;
     height: 100%;
     background-color: #ffffff;
     border-radius: 7px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.192);
 }
 .right-umid{
-    width: 50%;
+    width: 40%;
     height: 100%;
     background-color: #ffffff;
     border-radius: 7px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.192);
+    overflow: hidden;
 }
 .umid-container h4{
     text-align: center;
@@ -138,4 +178,40 @@
 .umid-container section{
     margin: 20px auto 0 auto;
     width: 95%;
+}
+.right-umid h4{
+    margin-top: 10px;
+}
+.header-right-umid{
+    padding-top: 20px;
+    height: 220px;
+    width: 100%;
+}
+
+.info-right-umid{
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+.table-umid {
+    border-collapse: collapse;
+    width: 85%;
+    margin: 0 auto 0 auto;
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    
+}
+.table-umid th, td {
+    padding: 0 20px 0 20px;
+    padding: 5px;
+    text-align: center;
+}
+.table-umid th {
+    background-color: #6da0ff;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 14px;
+}
+.table-umid td {
+    font-weight: 500;
+    font-size: 14px;
+    padding: 10px;
 }
