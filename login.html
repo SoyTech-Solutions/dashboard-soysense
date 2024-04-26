@@ -37,27 +37,21 @@
         const cpf = input_CPF.value; //Se for número, .length não funciona
         const senha = input_senha.value;
     
-        if(cpf.length != 11 || isNaN(cpf))
+        if(cpf.length == 11)
         {
-            alert("Insira um CPF válido");
-        }
-        else if(cpf != 12345678901) //cpf mockado apenas para validação. Se quiserem vamos
-        {                            //mudar isso depois.
-            alert("CPF não cadastrado");                    
-        }
-        else if(senha.length < 5)
-        {
-            alert("Senha inválida (necessita mais do que 4 caracteres)");
-        }
-        else if(senha != "teste123") //Senha mockada também, apenas para validação
-        {
-            alert("Senha incorreta");
+            if(cpf == "12345678901" && senha == "teste123")
+            {
+                alert("Login realizado com sucesso!");
+                window.location.assign("index.html");
+            }
+            else
+            {
+                alert("CPF ou senha inválidos. Tente novamente!")
+            }
         }
         else
         {
-            alert("Cadastro realizado com sucesso!");
-            window.location.assign("index.html");
+            alert("CPF precisa ter 11 dígitos!");
         }
-    
     }
 </script>
