@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoySense System | Login</title>
+    <link rel="stylesheet" href="../sandbox-dashboard-api/css/global-style.css">
+    <link rel="stylesheet" href="../sandbox-dashboard-api/css/login.style.css">
+</head>
+<body>
+    <div class="login-box">
+        <h1>Login</h1>
+        <form action="/login" method="POST">
+            <div class="row">
+                <div class="col">
+                    <label>Usuário:</label>
+                    <input name="usuario" type="text" id="input_CPF" required placeholder="Insira seu CPF">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label>Senha:</label>
+                    <input name="senha" type="password" id="input_senha" required placeholder="Insira sua senha">
+                </div>
+            </div>
+            <div class="row">
+                <button onclick="chkLogin()" type="button">Entrar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+
+<script>
+    function chkLogin()
+    {
+        const cpf = input_CPF.value; //Se for número, .length não funciona
+        const senha = input_senha.value;
+    
+        if(cpf.length != 11 || isNaN(cpf))
+        {
+            alert("Insira um CPF válido");
+        }
+        else if(cpf != 12345678901) //cpf mockado apenas para validação. Se quiserem vamos
+        {                            //mudar isso depois.
+            alert("CPF não cadastrado");                    
+        }
+        else if(senha.length < 5)
+        {
+            alert("Senha inválida (necessita mais do que 4 caracteres)");
+        }
+        else if(senha != "teste123") //Senha mockada também, apenas para validação
+        {
+            alert("Senha incorreta");
+        }
+        else
+        {
+            alert("Cadastro realizado com sucesso!");
+            window.location.assign("index.html");
+        }
+    
+    }
+</script>
