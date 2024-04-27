@@ -11,13 +11,13 @@
 
     <!-- estático js script -->
     <script src="./js/side-bar.js" defer></script>
-    <script src="./js/graficos-dashboard.js" defer></script>
 
     <!-- styles -->
     <link rel="stylesheet" href="./css/global-style.css">
     <link rel="stylesheet" href="./css/side-bar.css">
-    <link rel="stylesheet" href="./css/dashboard.css">
+    <!-- <link rel="stylesheet" href="./css/dashboard.css"> -->
     <link rel="stylesheet" href="./css/header-main.css">
+    <link rel="stylesheet" href="./css/gerenciar-monitor.css">
 </head>
 <body>
     <aside class="side-bar">
@@ -34,14 +34,14 @@
         <div class="line-side-bar"></div>
         <nav class="nav-side-bar">
             <ul class="accordion-menu">
-                <li class="nav-normal-item dash-on">
+                <li class="nav-normal-item">
                     <a href="./dashboard.html">
-                        <img width="17" height="17" src="https://img.icons8.com/material-outlined/24/FFFFFF/dashboard-layout.png" alt="dashboard-layout"/>
+                        <img width="17" height="17" src="https://img.icons8.com/material-outlined/24/FFFFFF/dashboard-layout.png" alt="dashboard-layout"/>    
                         Dashboard
                     </a>
                 </li>
                 <li class="accordion-item">
-                    <div class="accordion-item-header">
+                    <div class="accordion-item-header dash-on">
                         <img width="20" height="20" src="https://img.icons8.com/material-outlined/24/FFFFFF/maintenance.png" alt="maintenance"/>
                         <span>Gerenciar</span>
                     </div>
@@ -84,12 +84,12 @@
                             <a href=""><img width="10"  style="transform: rotate(270deg);" height="10" src="https://img.icons8.com/material-outlined/24/FFFFFF/left-down2.png" alt="left-down2"/>&nbsp;Rentabilidade</a>
                         </li>
                         <li class="accordion-subitem">
-                            <a href=""><img width="10"  style="transform: rotate(270deg);" height="10" src="https://img.icons8.com/material-outlined/24/FFFFFF/left-down2.png" alt="left-down2"/>&nbsp;;Anomalias</a>
+                            <a href=""><img width="10"  style="transform: rotate(270deg);" height="10" src="https://img.icons8.com/material-outlined/24/FFFFFF/left-down2.png" alt="left-down2"/>&nbsp;Anomalias</a>
                         </li>
                     </ul>
                 </li>
                 <li class="nav-normal-item">
-                    <a href="">                    
+                    <a href="">
                         <img width="17" height="17" src="https://img.icons8.com/material-outlined/24/FFFFFF/fine-print.png" alt="fine-print"/>                    
                         Benchmarking
                     </a>
@@ -126,115 +126,14 @@
 
         <header class="header-dashboard">
             <div class="inner-header">
-                <h1>Dashboard</h1>
-                <a href="#">/dashboard</a>
+                <h1>Gerenciar</h1>
+                <a href="./gerenciar-monitor.html">/monitor</a>
             </div>
         </header>
-        <section class="summary-container">
-            <div class="summary-card">
-                <div class="summary-main">
-
-                </div>
-                <div class="summary-footer ">
-
-                </div>
-            </div>
-            <div class="summary-card">
-                <div class="summary-main">
-
-                </div>
-                <div class="summary-footer ">
-                    
-                </div>
-            </div>
-            <div class="summary-card">
-                <div class="summary-main">
-
-                </div>
-                <div class="summary-footer ">
-                    
-                </div>
-            </div>
-            <div class="summary-card">
-                <div class="summary-main">
-
-                </div>
-                <div class="summary-footer ">
-                    
-                </div>
-            </div>
-        </section>
-
-        <section class="temp-container">
-            <div class="left-temp">
-                <h4>Temperatura Média (C°)</h4>
-                <section>
-                    <canvas id="lm35Temperatura"></canvas>
-                </section>
-            </div>
-            <div class="right-temp">
-                <div class="header-right-temp">
-                    <canvas id="qtdLm35"></canvas>
-                </div>
-                <h4>Informação Geral</h4>
-                <section class="info-right-temp">
-                    <table class="table-temp">
-                        <tr>
-                            <th>Sensores</th><th>Ativo</th><th>modelo</th><th>Medição</th>
-                        </tr>
-                        <tr>
-                            <td>
-                                11/1
-                            </td>
-                            <td>
-                                91%
-                            </td>
-                            <td>
-                                LM25
-                            </td>
-                            <td>
-                                Temperatura (C°)
-                            </td>
-                        </tr>
-                    </table>
-                </section>
-            </div>
-        </section>
-
-        <section class="umid-container">
-            <div class="left-umid">
-                <h4>Umidade Média (%)</h4>
-                <section>
-                    <canvas id="dht11Umidade"></canvas>
-                </section>
-            </div>
-            <div class="right-umid">
-                <div class="header-right-umid">
-                    <canvas id="qtdDht11"></canvas>
-                </div>
-                <h4>Informação Geral</h4>
-                <section class="info-right-umid">
-                    <table class="table-umid">
-                        <tr>
-                            <th>Sensores</th><th>Desempenho</th><th>Modelo</th><th>Medição</th>
-                        </tr>
-                        <tr>
-                            <td>
-                                21/9
-                            </td>
-                            <td>
-                                57%
-                            </td>
-                            <td>
-                                LM25
-                            </td>
-                            <td>
-                                Temperatura (C°)
-                            </td>
-                        </tr>
-                    </table>
-                </section>
-            </div>
+        <section class="search-container">
+            <div class="search-wrapper">
+                <input type="text" placeholder="Pesquisar...">
+                <button><img width="20" height="20" src="https://img.icons8.com/ios-filled/50/FFFFFF/search--v1.png" alt="search--v1"/></button>
             </div>
         </section>
     </main>

@@ -8,4 +8,10 @@
 html,body{
     height: 100%;
 }
-  
+.main-dashboard{
+    flex: 1;
+    background-color: #F4F5F9;
+    height: 100%;
+    position: relative;
+    overflow-y: auto;
+}
