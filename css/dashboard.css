@@ -3,16 +3,39 @@
 .summary-card:nth-child(1) > .summary-footer{
     background-color: #F0AD4E;
 }
+.summary-card:nth-child(1) > .summary-main{
+    background-color: #f0ac4eaf;
+    color: #fff;
+}
+
 .summary-card:nth-child(2) > .summary-footer{
     background-color: #337AB7;
+}
+.summary-card:nth-child(2) > .summary-main{
+    background-color: #3379b7c7;
+    color: #fff;
 }
 .summary-card:nth-child(3) > .summary-footer{
     background-color: #5CB85C;
 }
+.summary-card:nth-child(3) > .summary-main{
+    background-color: #5cb85cad;
+    color: #FFF;
+}
 .summary-card:nth-child(4) > .summary-footer{
     background-color: #D9534F;
 }
-
+.summary-card:nth-child(4) > .summary-main{
+    background-color: #d9544fab;
+    color: #ffffff;
+}
+.summary-main{
+    height: calc(100% - 50px);
+    display: flex;
+    align-items: center;;
+    font-size: 35px;
+    padding-left: 30px;
+}
 .temp-container{
     width: 90%;
     height: 370px;

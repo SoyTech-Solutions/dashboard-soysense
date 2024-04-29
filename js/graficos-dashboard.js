@@ -1,3 +1,7 @@
+var umidCard = document.querySelector('#umid-card');
+var tempCard = document.querySelector('#temp-card');
+
+
 /* -- lm35Temperatura */
 var contextoLm35Temperatura = document.getElementById('lm35Temperatura').getContext('2d');
 var lm35Temperatura = new Chart(
@@ -213,6 +217,12 @@ setInterval(() => {
     valoresAleatorio = valoresAleatorio.split(';')
     console.log(valoresAleatorio);
 
+    umidCard.innerHTML = `
+        <h2> ${valoresAleatorio[0]}%</h2>
+    `
+    tempCard.innerHTML = `
+        <h2> ${valoresAleatorio[1]}°C</h2>
+    `
 
     obterDados(dht11Umidade, valoresAleatorio[0]);
     obterDados(lm35Temperatura, valoresAleatorio[1]);
