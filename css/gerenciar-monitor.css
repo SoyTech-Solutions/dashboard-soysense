@@ -24,14 +24,14 @@
     height: 100%;
 }
 .search-wrapper input{
-    width: 90%;
+    width: 95%;
     padding-left: 10px;
 }
 .search-wrapper input:focus{
     outline: none;
 }
 .search-wrapper button{
-    width: 10%;
+    width: 5%;
     background-color: #1EADE3;
     cursor: pointer;
 }
