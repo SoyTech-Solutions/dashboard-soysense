@@ -52,7 +52,8 @@
 .table-container > .main-table-container{
     width: 100%;
     height: calc(100% - 60px);
-    background-color: blue;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.151);
 }
 .table-container > .footer-table-container{
     width: 100%;
@@ -67,11 +68,16 @@
     width: 120px;
     background-color: rgb(28, 212, 28);
     border-radius: 7px;
-    font-weight: bolder;
     color: #fff;
+    cursor: pointer;
+    transition: 0.3s all;
+}
+.table-container > .footer-table-container > button:hover{
+    background-color: rgb(26, 185, 26);
 }
 .table-container > .footer-table-container > button, p{
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-weight: bolder;
 }
 .table-container > .footer-table-container > p > span{
     color: rgb(28, 212, 28);;
