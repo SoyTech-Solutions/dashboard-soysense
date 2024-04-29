@@ -1,13 +1,13 @@
 /* -======================== */
 
 .summary-card:nth-child(1) > .summary-footer{
-    background-color: #337AB7;
+    background-color: #F0AD4E;
 }
 .summary-card:nth-child(2) > .summary-footer{
-    background-color: #5CB85C;
+    background-color: #337AB7;
 }
 .summary-card:nth-child(3) > .summary-footer{
-    background-color: #F0AD4E;
+    background-color: #5CB85C;
 }
 .summary-card:nth-child(4) > .summary-footer{
     background-color: #D9534F;
