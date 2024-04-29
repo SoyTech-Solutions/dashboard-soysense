@@ -11,6 +11,7 @@
 
     <!-- estático js script -->
     <script src="./js/side-bar.js" defer></script>
+    <script src="./js/modal-adicionar-monitor.js" defer></script>
 
     <!-- styles -->
     <link rel="stylesheet" href="./css/global-style.css">
@@ -138,13 +139,68 @@
         </section>
         <section class="table-container">
             <div class="main-table-container">
-                
+                <table>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Cargo</th>
+                        <th>Gerenciar</th>
+                    </tr>
+                    <tr>
+                        <td>Fernanda</td>
+                        <td>fernanda.caramico@sptech.school</td>
+                        <td>Admin</td>
+                        <td>
+                            <button class="btn-edi">
+                                <img width="17" height="17" src="https://img.icons8.com/material-outlined/24/FFFFFF/edit--v1.png" alt="edit--v1"/>
+                            </button>
+                            <button class="btn-del">
+                                <img width="17" height="17" src="https://img.icons8.com/material-outlined/24/FFFFFF/trash--v1.png" alt="trash--v1"/>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Julia</td>
+                        <td>julia@sptech.school</td>
+                        <td>Monitor</td>
+                        <td>
+                            <button class="btn-edi">
+                                <img width="17" height="17" src="https://img.icons8.com/material-outlined/24/FFFFFF/edit--v1.png" alt="edit--v1"/>
+                            </button>
+                            <button class="btn-del">
+                                <img width="17" height="17" src="https://img.icons8.com/material-outlined/24/FFFFFF/trash--v1.png" alt="trash--v1"/>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Fernando</td>
+                        <td>fernando@sptech.school</td>
+                        <td>Monitor</td>
+                        <td>
+                            <button class="btn-edi">
+                                <img width="17" height="17" src="https://img.icons8.com/material-outlined/24/FFFFFF/edit--v1.png" alt="edit--v1"/>
+                            </button>
+                            <button class="btn-del">
+                                <img width="17" height="17" src="https://img.icons8.com/material-outlined/24/FFFFFF/trash--v1.png" alt="trash--v1"/>
+                            </button>
+                        </td>
+                    </tr>
+
+                </table>
             </div>
             <div class="footer-table-container">
-                <p>Monitores registrados: <span>1</span></p>
-                <button>Adicionar</button>
+                <p>Monitores registrados: <span>3</span></p>
+                <button id="openModalAdicionar">Adicionar +</button>
             </div>
         </section>
+        <div id="modalAdicionarMonitor" class="modal">
+            <div class="modal-content">
+                <div class="header-modal">
+                    <span class="close" id="closeAdicionarMonitor">&times;</span>
+                </div>
+                    <H1>ADICIONE A PARTE DO CADASTRO AQUI!!!</H1>
+            </div>
+        </div>
     </main>
 </body>
 
