@@ -170,14 +170,14 @@ function obterDados(grafico, endpoint) {
             grafico.data.datasets[0].data.shift();
         }
 
-        grafico.data.labels.push(tempo[endpoint]++);
+        grafico.data.labels.push(`${horas}:${minutos}`);
         grafico.data.datasets[0].data.push(parseFloat(valor));
         grafico.update();
     })
     
 }
 
-grafico.data.labels.push(`${horas}:${minutos}`);
+
 setInterval(() => {
     obterDados(lm35Temperatura, 'lm35/temperatura');
     obterDados(dht11Umidade, 'dht11/umidade');
