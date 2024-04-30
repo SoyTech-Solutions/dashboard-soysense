@@ -38,7 +38,7 @@
 }
 .temp-container{
     width: 90%;
-    height: 370px;
+    height: 410px;
     margin: 30px auto 30px auto;
     display: flex;
     flex-direction: row;
@@ -69,7 +69,7 @@
     overflow: hidden;
 }
 .right-temp h4{
-    margin-top: 10px;
+    margin-top: 40px;
 }
 .header-right-temp{
     padding-top: 20px;
@@ -109,7 +109,7 @@
 
 .umid-container{
     width: 90%;
-    height: 370px;
+    height: 410px;
     margin: 30px auto 30px auto;
     display: flex;
     flex-direction: row-reverse;
