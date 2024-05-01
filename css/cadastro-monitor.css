@@ -1,11 +1,10 @@
 
 /* cor do corpo do site */
 body{ 
-    background-color: #dddddd;
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 /* linhas */
 .row{ 
@@ -19,29 +18,28 @@ body{
     display: flex;
     flex-direction: column;
 }
+.col > label{
+    margin-top: 10px;
+}
 /* caixa/card/container de cadastro */
 .cadastro-box{
-    height: 580px + Valorpx;
-    width: 400px;
-    background-color: #FFF;
+    width: 500px;
     border-radius: 5px;
-    box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.178);
+    /* box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.178); */
     font-family: 'Manrope', Arial, Helvetica, sans-serif;
-    padding: 10px;
 }
 /* pegando o h1 da caixa do cadastro */
 .cadastro-box > h1{
     text-transform: uppercase;
-    font-size: 30px;
+    margin: 15px 0 0px 0;
+    font-size: 20px;
+    line-height: 20px;
     color: #1877F2;
     text-align: center;
-    margin-top: 20px;
     font-family: 'Roboto condensed', Arial, Helvetica, sans-serif;
 }
 /* dando margem para a segunda linha (enésimo filho) */
-.row:nth-child(1){
-    margin-bottom: 10px;
-} 
+
 /* mudando a largura das colunas dentro da linha */
 .row > .col{
     width: 100%;
@@ -83,4 +81,56 @@ body{
 /* alterar a cor de fundo quando o mouser ficar em cima do botão */
 .cadastro-box button:hover{
     background-color:#1253a8;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+}
+.modal.active {
+    display: flex;
+}
+.modal-content {
+    background-color: #fefefe;
+    height: auto;
+    width: 300px;
+    border: 1px solid #888;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+.header-modal{
+    width: 100%;
+    height: 80px;
+    background-color: #FD5C6A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal-erros{
+    padding: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }

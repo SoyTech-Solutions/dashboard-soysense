@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoySense System | Login</title>
+    <link rel="stylesheet" href="css/global-style.css">
+    <link rel="stylesheet" href="css/cadastro-monitor.css">
+</head>
+<body>
+    <div class="cadastro-box">
+        <h1>Cadastre um novo funcionário</h1>
+        <form action="/cadastro" method="POST">
+            <div class="row">
+                <div class="col">
+                    <label>Nome Completo:</label>
+                    <input id="input_nome_cliente" name="nome" type="text" required placeholder="Insira o nome do funcionário">
+                    <div id="div_erro_nome_cliente"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label>Telefone para contato:</label>
+                    <input id="input_telefone_contato" name="telefone" type="text" required placeholder="Insira o telefone">
+                    <div id="div_erro_telefone_contato"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label>Email para contato:</label>
+                    <input id="input_email_contato" name="email" type="text" required placeholder="Insira o email">
+                    <div id="div_erro_email_contato"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label>Senha:</label>
+                    <input id="input_senha" name="senha" type="password" required placeholder="Insira uma senha">
+                    <div id="div_erro_senha"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label>Confirme a senha:</label>
+                    <input id="input_confirmacao_senha" name="confirmacaoSenha" type="password" required placeholder="Insira a senha novamente">
+                    <div id="div_erro_confirmacao_senha"></div>
+                </div>
+            </div>
+            <div class="row">
+                <button onclick="Cadastrar()" type="button">Cadastrar novo funcionário</button>
+            </div>
+        </form>
+    </div>
+    <div id="modalErro" class="modal">
+        <div class="modal-content" id="modalContent">
+            <div class="header-modal">
+                <img width="50" height="50" src="https://img.icons8.com/ios/50/FFFFFF/box-important--v1.png" alt="box-important--v1"/>            </div>
+            <div class="modal-erros" id="modal_erros">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function Cadastrar() {
+        
+        const nomeCliente = input_nome_cliente.value
+        const telContato = input_telefone_contato.value
+        const emailContato = input_email_contato.value
+        const senha = input_senha.value
+        const confirmacaoSenha = input_confirmacao_senha.value
+        let verificacaoNomeCliente = ``
+        let verificacaoTelefone = telContato.replaceAll(" ", "").replaceAll("+", "").replaceAll("-", "").replaceAll("(", "").replaceAll(")", "")
+        let verificacaoSenha = Number(senha)
+        let senhaAutorizada = false
+
+        // todas as verificações, adiciona em uma variavel o erro 
+        // exemplo
+        let listaErro = `<p style="color: red"> Digite uma senha entre papa pa</p>`
+        listaErro +=  `<p style="color: red"> Email deve conter piriri pororo</p>`
+        // listaErro +=  `<p style="color: red"> Email deve conter piriri pororo</p>`
+        // listaErro +=  `<p style="color: red"> Email deve conter piriri pororo</p>`
+        // listaErro +=  `<p style="color: red"> Email deve conter piriri pororo</p>`
+
+        // coloca os erros no modal
+        modal_erros.innerHTML = listaErro;
+
+        modalErro.style.display = 'flex'; // ativa o modal
+
+        setTimeout(function(){
+            modalErro.style.display = 'none';
+        }, 3000); // espera 3 segundos para tirar o modal da tela
+
+
+        
+
+        // if (nomeCliente == "") {
+        //     div_erro_nome_cliente.innerHTML = `<a style="color: red">Nome inválido</a>`
+        // } else {
+        //     div_erro_nome_cliente.innerHTML = ``
+        // }
+        // if (telContato == "" || isNaN(verificacaoTelefone) || verificacaoTelefone.length > 14 || verificacaoTelefone.length < 11) {
+        //     div_erro_telefone_contato.innerHTML = `<a style="color: red">Telefone inválido</a>`
+        // } else {
+        //     div_erro_telefone_contato.innerHTML = ``
+        // }
+        // if (emailContato == "" || emailContato.indexOf('@') <= 0 || emailContato.indexOf('.') <= 0) {
+        //     div_erro_email_contato.innerHTML = `<a style="color: red">Email inválido</a>`
+        // } else {
+        //     div_erro_email_contato.innerHTML = ``
+        // }
+        // if (verificacaoSenha == "" || verificacaoSenha.length < 8 || verificacaoSenha.length > 255 || senha.indexOf('%') <= 0) {
+        //     div_erro_senha.innerHTML = `<a style="color: red">A senha deve ter o menos 8 digitos, sendo composto de números e ao menos um %</a>`
+        // } else for (let contagemSenha = 0; contagemSenha <= 9; contagemSenha++) {
+        //     verificacaoSenha = senha.indexOf(contagemSenha)
+        //     if (verificacaoSenha >= 0) {
+        //         div_erro_senha.innerHTML = ``
+        //         senhaAutorizada = true
+        //     } else if (senhaAutorizada = false) {
+        //         div_erro_senha.innerHTML = `<a style="color: red">senha inválida</a>`
+        //     }
+        // }
+        // if (confirmacaoSenha != senha) {
+        //     div_erro_confirmacao_senha.innerHTML = `<a style="color: red">As senhas não coincidem</a>`
+        // } else {
+        //     div_erro_confirmacao_senha.innerHTML = ``
+        // }
+        // for (let contagemNome = 0; contagemNome <= 9; contagemNome++) {
+        //     verificacaoNomeCliente = nomeCliente.indexOf(contagemNome)
+        //     if (verificacaoNomeCliente >= 0) {
+        //         div_erro_nome_cliente.innerHTML = `<a style="color: red">Nome inválido</a>`
+        //     }
+        // }
+    }
+</script>
