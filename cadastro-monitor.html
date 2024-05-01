@@ -53,11 +53,22 @@
     </div>
     <div id="modalErro" class="modal">
         <div class="modal-content" id="modalContent">
-            <div class="header-modal">
+            <div class="header-modal-erro">
                 <img width="50" height="50" src="https://img.icons8.com/ios/50/FFFFFF/box-important--v1.png"
                     alt="box-important--v1" />
             </div>
             <div class="modal-erros" id="modal_erros">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="modalCorreto" class="modal">
+        <div class="modal-content" id="modalContent">
+            <div class="header-modal-correto">
+                <img width="50" height="50" src="https://img.icons8.com/glyph-neue/64/FFFFFF/tiktok-verified-account.png" alt="tiktok-verified-account"/>
+            </div>
+            <div class="modal-corretos" id="modal_corretos">
 
             </div>
         </div>
@@ -188,6 +199,21 @@
             setTimeout(function () {
                 modalErro.style.display = 'none';
             }, 5000); // espera 3 segundos para tirar o modal da tela
+
+
+        }else{
+            
+            modal_corretos.innerHTML = `<p><span style="color: green;">&bull;&nbsp;</span>O <span style="color: green;">${nomeCliente}</span> foi cadastrado com sucesso!</p>`
+
+                        modalCorreto.style.display = 'flex'; // ativa o modal
+
+            modalCorreto.addEventListener('click', ()=>{
+                modalCorreto.style.display = 'none'
+            })
+
+            setTimeout(function () {
+                modalCorreto.style.display = 'none';
+            }, 1800); // espera 3 segundos para tirar o modal da tela
         }
     }
 

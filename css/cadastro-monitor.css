@@ -94,9 +94,6 @@ body{
     flex-direction: column;
     align-items: center;
 }
-.modal.active {
-    display: flex;
-}
 .modal-content {
     background-color: #fefefe;
     margin-top: 10px;
@@ -110,7 +107,7 @@ body{
     flex-direction: column;
     overflow: hidden;
 }
-.header-modal{
+.header-modal-erro{
     width: 100%;
     height: 80px;
     background-color: #FD5C6A;
@@ -118,7 +115,15 @@ body{
     align-items: center;
     justify-content: center;
 }
-.modal-erros{
+.header-modal-correto{
+    width: 100%;
+    height: 80px;
+    background-color: #40be4b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal-erros, .modal-corretos{
     padding: 10px;
 }
 .modal-erros p{
