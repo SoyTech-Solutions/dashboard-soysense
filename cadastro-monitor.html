@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="css/global-style.css">
     <link rel="stylesheet" href="css/cadastro-monitor.css">
 </head>
+
 <body>
     <div class="cadastro-box">
         <h1>Cadastre um novo Montor</h1>
@@ -14,14 +16,16 @@
             <div class="row">
                 <div class="col">
                     <label>Nome Completo:</label>
-                    <input id="input_nome_cliente" name="nome" type="text" required placeholder="Insira o nome do funcionário">
+                    <input id="input_nome_cliente" name="nome" type="text" required
+                        placeholder="Insira o nome do funcionário">
                     <div id="div_erro_nome_cliente"></div>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <label>Telefone para contato:</label>
-                    <input id="input_telefone_contato" name="telefone" type="text" required placeholder="Insira o telefone">
+                    <input id="input_telefone_contato" name="telefone" type="text" required
+                        placeholder="Insira o telefone">
                     <div id="div_erro_telefone_contato"></div>
                 </div>
             </div>
@@ -42,7 +46,8 @@
             <div class="row">
                 <div class="col">
                     <label>Confirme a senha:</label>
-                    <input id="input_confirmacao_senha" name="confirmacaoSenha" type="password" required placeholder="Insira a senha novamente">
+                    <input id="input_confirmacao_senha" name="confirmacaoSenha" type="password" required
+                        placeholder="Insira a senha novamente">
                     <div id="div_erro_confirmacao_senha"></div>
                 </div>
             </div>
@@ -54,84 +59,98 @@
     <div id="modalErro" class="modal">
         <div class="modal-content" id="modalContent">
             <div class="header-modal">
-                <img width="50" height="50" src="https://img.icons8.com/ios/50/FFFFFF/box-important--v1.png" alt="box-important--v1"/>            </div>
+                <img width="50" height="50" src="https://img.icons8.com/ios/50/FFFFFF/box-important--v1.png"
+                    alt="box-important--v1" />
+            </div>
             <div class="modal-erros" id="modal_erros">
 
             </div>
         </div>
     </div>
 </body>
+
 </html>
 
 <script>
     function Cadastrar() {
-        
+
+        // Segue constantes dos input's
         const nomeCliente = input_nome_cliente.value
         const telContato = input_telefone_contato.value
         const emailContato = input_email_contato.value
         const senha = input_senha.value
         const confirmacaoSenha = input_confirmacao_senha.value
-        let verificacaoNomeCliente = ``
-        let verificacaoTelefone = telContato.replaceAll(" ", "").replaceAll("+", "").replaceAll("-", "").replaceAll("(", "").replaceAll(")", "")
-        let verificacaoSenha = Number(senha)
-        let senhaAutorizada = false
-
-        // todas as verificações, adiciona em uma variavel o erro 
-        // exemplo
-        let listaErro = `<p style="color: red"> Digite uma senha entre papa pa</p>`
-        listaErro +=  `<p style="color: red"> Email deve conter piriri pororo</p>`
-        // listaErro +=  `<p style="color: red"> Email deve conter piriri pororo</p>`
-        // listaErro +=  `<p style="color: red"> Email deve conter piriri pororo</p>`
-        // listaErro +=  `<p style="color: red"> Email deve conter piriri pororo</p>`
-
-        // coloca os erros no modal
-        modal_erros.innerHTML = listaErro;
-
-        modalErro.style.display = 'flex'; // ativa o modal
-
-        setTimeout(function(){
-            modalErro.style.display = 'none';
-        }, 4000); // espera 3 segundos para tirar o modal da tela
+        let verificacaoNomeCliente = `` // Usada nas verificações do nome
+        let verificacaoTelefone = telContato.replaceAll(" ", "").replaceAll("+", "").replaceAll("-", "").replaceAll("(", "").replaceAll(")", "") // troca todos os parenteses, sinais de "+", "-" e espaços por espaços em branco, para que fique apenas números na hora da verificação.
+        let verificacaoSenha = Number(senha) // Usada na maioria das verificações da senha
+        let senhaAutorizada = false // serve para verificar se a senha contém algum caractere numérico
+        let listaErro = `` // serve para armazenas as mensagens de erro
+        let contemErro = false // serve para verificar se houve algum erro em qualquer um dos campos
 
 
-        
+        if (nomeCliente == "") {
+            listaErro += `<p style="color: red">Por favor, insira um nome</p>`
+            contemErro = true
 
-        // if (nomeCliente == "") {
-        //     div_erro_nome_cliente.innerHTML = `<a style="color: red">Nome inválido</a>`
-        // } else {
-        //     div_erro_nome_cliente.innerHTML = ``
-        // }
-        // if (telContato == "" || isNaN(verificacaoTelefone) || verificacaoTelefone.length > 14 || verificacaoTelefone.length < 11) {
-        //     div_erro_telefone_contato.innerHTML = `<a style="color: red">Telefone inválido</a>`
-        // } else {
-        //     div_erro_telefone_contato.innerHTML = ``
-        // }
-        // if (emailContato == "" || emailContato.indexOf('@') <= 0 || emailContato.indexOf('.') <= 0) {
-        //     div_erro_email_contato.innerHTML = `<a style="color: red">Email inválido</a>`
-        // } else {
-        //     div_erro_email_contato.innerHTML = ``
-        // }
-        // if (verificacaoSenha == "" || verificacaoSenha.length < 8 || verificacaoSenha.length > 255 || senha.indexOf('%') <= 0) {
-        //     div_erro_senha.innerHTML = `<a style="color: red">A senha deve ter o menos 8 digitos, sendo composto de números e ao menos um %</a>`
-        // } else for (let contagemSenha = 0; contagemSenha <= 9; contagemSenha++) {
-        //     verificacaoSenha = senha.indexOf(contagemSenha)
-        //     if (verificacaoSenha >= 0) {
-        //         div_erro_senha.innerHTML = ``
-        //         senhaAutorizada = true
-        //     } else if (senhaAutorizada = false) {
-        //         div_erro_senha.innerHTML = `<a style="color: red">senha inválida</a>`
-        //     }
-        // }
-        // if (confirmacaoSenha != senha) {
-        //     div_erro_confirmacao_senha.innerHTML = `<a style="color: red">As senhas não coincidem</a>`
-        // } else {
-        //     div_erro_confirmacao_senha.innerHTML = ``
-        // }
-        // for (let contagemNome = 0; contagemNome <= 9; contagemNome++) {
-        //     verificacaoNomeCliente = nomeCliente.indexOf(contagemNome)
-        //     if (verificacaoNomeCliente >= 0) {
-        //         div_erro_nome_cliente.innerHTML = `<a style="color: red">Nome inválido</a>`
-        //     }
-        // }
+        } else for (let contagemNome = 0; contagemNome <= 9; contagemNome++) {
+            verificacaoNomeCliente = nomeCliente.indexOf(contagemNome)
+
+            if (verificacaoNomeCliente >= 0) {
+                listaErro += `<p style="color: red">Nome inválido</p>`
+                contemErro = true
+            }
+        }
+        if (telContato == "") {
+            listaErro += `<p style="color: red">Por favor, insira um telefone</p>`
+            contemErro = true
+
+        } else if (isNaN(verificacaoTelefone) || verificacaoTelefone.length > 14 || verificacaoTelefone.length < 11) {
+            listaErro += `<p style="color: red">Telefone inválido</p>`
+            contemErro = true
+        }
+        if (emailContato == "") {
+            listaErro += `<p style="color: red">Por favor, insira um email</p>`
+            contemErro = true
+
+        } else if (emailContato.indexOf('@') <= 0 || emailContato.indexOf('.') <= 0) {
+            listaErro += `<p style="color: red">Email inválido</p>`
+            contemErro = true
+
+        }
+        if (verificacaoSenha == "") {
+            listaErro += `<p style="color: red">Por favor, insira uma senha</p>`
+            contemErro = true
+
+        } else if (verificacaoSenha.length < 8 || verificacaoSenha.length > 255 || senha.indexOf('%') <= 0) {
+            listaErro += `<p style="color: red">A senha deve conter ao menos 8 dígitos, sendo composto de números e ao menos um %</p>`
+            contemErro = true
+
+        } else for (let contagemSenha = 0; contagemSenha <= 9; contagemSenha++) {
+            verificacaoSenha = senha.indexOf(contagemSenha)
+
+            if (verificacaoSenha >= 0) {
+                senhaAutorizada = true
+
+            } else if (senhaAutorizada = false) {
+                listaErro += `<p style="color: red">A senha deve conter ao menos um caractere numérico</p>`
+                contemErro = true
+            }
+        }
+        if (confirmacaoSenha != senha) {
+            listaErro += `<p style="color: red">As senhas não coincidem</p>`
+            contemErro = true
+        }
+        // coloca os erros no modal se houver erro
+        if (contemErro == true) {
+            modal_erros.innerHTML = listaErro;
+
+            modalErro.style.display = 'flex'; // ativa o modal
+
+            setTimeout(function () {
+                modalErro.style.display = 'none';
+            }, 4000); // espera 3 segundos para tirar o modal da tela
+        }
     }
+
+
 </script>
