@@ -12,7 +12,7 @@
 <body>
     <div class="cadastro-box">
         <h1>Cadastre um novo Monitor</h1>
-        <form action="/cadastro" method="POST">
+        <form id="form_cadastrar_monitor" action="/cadastro" method="POST">
             <div class="row">
                 <div class="col">
                     <label>Nome Completo:</label>
@@ -211,6 +211,8 @@
             setTimeout(function () {
                 modalCorreto.style.display = 'none';
             }, 1800); // espera 3 segundos para tirar o modal da tela
+
+            form_cadastrar_monitor.reset();
         }
     }
 
