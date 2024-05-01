@@ -174,15 +174,20 @@
         //     listaErro += `<p style="color: red">As senhas não coincidem</p>`
         //     contemErro = true
         // }
+
         // coloca os erros no modal se houver erro
         if (contemErro == true) {
             modal_erros.innerHTML = listaErro;
 
             modalErro.style.display = 'flex'; // ativa o modal
 
+            modalErro.addEventListener('click', ()=>{
+                modalErro.style.display = 'none'
+            })
+
             setTimeout(function () {
                 modalErro.style.display = 'none';
-            }, 4000); // espera 3 segundos para tirar o modal da tela
+            }, 5000); // espera 3 segundos para tirar o modal da tela
         }
     }
 
