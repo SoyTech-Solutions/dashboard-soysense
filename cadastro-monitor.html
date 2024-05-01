@@ -75,7 +75,6 @@
         const emailContato = input_email_contato.value
         const senha = input_senha.value
         const confirmacaoSenha = input_confirmacao_senha.value
-        let verificacaoNomeCliente = `` // Usada nas verificações do nome
         let verificacaoTelefone = telContato.replaceAll(" ", "").replaceAll("+", "").replaceAll("-", "").replaceAll("(", "").replaceAll(")", "") // troca todos os parenteses, sinais de "+", "-" e espaços por espaços em branco, para que fique apenas números na hora da verificação.
         let verificacaoSenha = Number(senha) // Usada na maioria das verificações da senha
         let senhaAutorizada = false // serve para verificar se a senha contém algum caractere numérico
@@ -83,58 +82,98 @@
         let contemErro = false // serve para verificar se houve algum erro em qualquer um dos campos
 
 
-        if (nomeCliente == "") {
-            listaErro += `<p style="color: red">Por favor, insira um nome</p>`
-            contemErro = true
+        if(nomeCliente != "" && telContato != "" && emailContato != "" && senha != "" && confirmacaoSenha != ""){
+            if(!isNaN(Number(nomeCliente))){
+                listaErro += `<p><span><span style="color: red;">&bull;&nbsp;</span>Digite um nome válido, sem caractere numérico!</p>`
+                contemErro = true;
+            }
 
-        } else for (let contagemNome = 0; contagemNome <= 9; contagemNome++) {
-            verificacaoNomeCliente = nomeCliente.indexOf(contagemNome)
+            if (isNaN(verificacaoTelefone) || verificacaoTelefone.length != 11) {
+                listaErro += `<p><span ><span style="color: red;">&bull;&nbsp;</span></span>Telefone não correspondente. Tente outro!</p>`
+                contemErro = true;
+            }
 
-            if (verificacaoNomeCliente >= 0) {
-                listaErro += `<p style="color: red">Nome inválido</p>`
+            if (emailContato.indexOf('@') <= 0 || emailContato.indexOf('.') <= 0) {
+                listaErro += `<p ><span style="color: red;">&bull;&nbsp;</span>O endereço de Email é invalido!</p>`
+                contemErro = true
+
+            }
+
+            if (verificacaoSenha.length < 8 || verificacaoSenha.length > 16 || senha.indexOf('@') <= 0) {
+                listaErro += `<p><span style="color: red;">&bull;&nbsp;</span>A senha deve ser composta de 8-16 digitos com pelo menos um caractere númerico e um simbolo '@'</p>`
+                contemErro = true
+
+            } else for (let contagemSenha = 0; contagemSenha <= 9; contagemSenha++) {
+                verificacaoSenha = senha.indexOf(contagemSenha)
+
+                if (verificacaoSenha >= 0) {
+                    senhaAutorizada = true
+
+                } else if (senhaAutorizada = false) {
+                    listaErro += `<p><span style="color: red;">&bull;&nbsp;</span>A senha deve conter ao menos um caractere numérico</p>`
+                    contemErro = true
+                }
+            }
+            if (confirmacaoSenha != senha) {
+                listaErro += `<p><span style="color: red;">&bull;&nbsp;</span>As senhas não coincidem</p>`
                 contemErro = true
             }
+        }else{
+            contemErro = true;
+            listaErro += `<p ><span style="color: red;">&bull;&nbsp;</span>Preencha todos os campos</p>`
         }
-        if (telContato == "") {
-            listaErro += `<p style="color: red">Por favor, insira um telefone</p>`
-            contemErro = true
+        // if (nomeCliente == "") {
+        //     listaErro += `<p style="color: red">Por favor, insira um nome</p>`
+        //     contemErro = true
 
-        } else if (isNaN(verificacaoTelefone) || verificacaoTelefone.length > 14 || verificacaoTelefone.length < 11) {
-            listaErro += `<p style="color: red">Telefone inválido</p>`
-            contemErro = true
-        }
-        if (emailContato == "") {
-            listaErro += `<p style="color: red">Por favor, insira um email</p>`
-            contemErro = true
+        // } else for (let contagemNome = 0; contagemNome <= 9; contagemNome++) {
+        //     verificacaoNomeCliente = nomeCliente.indexOf(contagemNome)
 
-        } else if (emailContato.indexOf('@') <= 0 || emailContato.indexOf('.') <= 0) {
-            listaErro += `<p style="color: red">Email inválido</p>`
-            contemErro = true
+        //     if (verificacaoNomeCliente >= 0) {
+        //         listaErro += `<p style="color: red">Nome inválido</p>`
+        //         contemErro = true
+        //     }
+        // }
+        // if (telContato == "") {
+        //     listaErro += `<p style="color: red">Por favor, insira um telefone</p>`
+        //     contemErro = true
 
-        }
-        if (verificacaoSenha == "") {
-            listaErro += `<p style="color: red">Por favor, insira uma senha</p>`
-            contemErro = true
+        // } else if (isNaN(verificacaoTelefone) || verificacaoTelefone.length > 14 || verificacaoTelefone.length < 11) {
+        //     listaErro += `<p style="color: red">Telefone inválido</p>`
+        //     contemErro = true
+        // }
+        // if (emailContato == "") {
+        //     listaErro += `<p style="color: red">Por favor, insira um email</p>`
+        //     contemErro = true
 
-        } else if (verificacaoSenha.length < 8 || verificacaoSenha.length > 255 || senha.indexOf('%') <= 0) {
-            listaErro += `<p style="color: red">A senha deve conter ao menos 8 dígitos, sendo composto de números e ao menos um %</p>`
-            contemErro = true
+        // } else if (emailContato.indexOf('@') <= 0 || emailContato.indexOf('.') <= 0) {
+        //     listaErro += `<p style="color: red">Email inválido</p>`
+        //     contemErro = true
 
-        } else for (let contagemSenha = 0; contagemSenha <= 9; contagemSenha++) {
-            verificacaoSenha = senha.indexOf(contagemSenha)
+        // }
+        // if (verificacaoSenha == "") {
+        //     listaErro += `<p style="color: red">Por favor, insira uma senha</p>`
+        //     contemErro = true
 
-            if (verificacaoSenha >= 0) {
-                senhaAutorizada = true
+        // } else if (verificacaoSenha.length < 8 || verificacaoSenha.length > 255 || senha.indexOf('%') <= 0) {
+        //     listaErro += `<p style="color: red">A senha deve conter ao menos 8 dígitos, sendo composto de números e ao menos um %</p>`
+        //     contemErro = true
 
-            } else if (senhaAutorizada = false) {
-                listaErro += `<p style="color: red">A senha deve conter ao menos um caractere numérico</p>`
-                contemErro = true
-            }
-        }
-        if (confirmacaoSenha != senha) {
-            listaErro += `<p style="color: red">As senhas não coincidem</p>`
-            contemErro = true
-        }
+        // } else for (let contagemSenha = 0; contagemSenha <= 9; contagemSenha++) {
+        //     verificacaoSenha = senha.indexOf(contagemSenha)
+
+        //     if (verificacaoSenha >= 0) {
+        //         senhaAutorizada = true
+
+        //     } else if (senhaAutorizada = false) {
+        //         listaErro += `<p style="color: red">A senha deve conter ao menos um caractere numérico</p>`
+        //         contemErro = true
+        //     }
+        // }
+        // if (confirmacaoSenha != senha) {
+        //     listaErro += `<p style="color: red">As senhas não coincidem</p>`
+        //     contemErro = true
+        // }
         // coloca os erros no modal se houver erro
         if (contemErro == true) {
             modal_erros.innerHTML = listaErro;
