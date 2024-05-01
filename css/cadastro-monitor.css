@@ -126,7 +126,7 @@ body{
 .modal-erros, .modal-corretos{
     padding: 10px;
 }
-.modal-erros p{
+.modal-erros p, .modal-corretos p{
     margin-bottom: 3px;
     font-size: 13px;
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
