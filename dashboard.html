@@ -28,8 +28,8 @@
             <div class="profile-picture">
                 <img src="./img/profile.jpg"/>
             </div>
-            <span>Admin</span>
-            <h4>Fernanda</h4>
+            <span>Empresa</span>
+            <h4>SPTech School</h4>
         </div>
         <div class="line-side-bar"></div>
         <nav class="nav-side-bar">
@@ -64,10 +64,10 @@
                     </div>
                     <ul class="accordion-submenu">
                         <li class="accordion-subitem">
-                            <a href=""><img width="10"  style="transform: rotate(270deg);" height="10" src="https://img.icons8.com/material-outlined/24/FFFFFF/left-down2.png" alt="left-down2"/>&nbsp;Fazenda X</a>
+                            <a href="fazenda.html"><img width="10"  style="transform: rotate(270deg);" height="10" src="https://img.icons8.com/material-outlined/24/FFFFFF/left-down2.png" alt="left-down2"/>&nbsp;Fazenda X</a>
                         </li>
                         <li class="accordion-subitem">
-                            <a href=""><img width="10"  style="transform: rotate(270deg);" height="10" src="https://img.icons8.com/material-outlined/24/FFFFFF/left-down2.png" alt="left-down2"/>&nbsp;Fazenda Y</a>
+                            <a href="fazenda.html"><img width="10"  style="transform: rotate(270deg);" height="10" src="https://img.icons8.com/material-outlined/24/FFFFFF/left-down2.png" alt="left-down2"/>&nbsp;Fazenda Y</a>
                         </li>
                     </ul>
                 </li>
@@ -133,23 +133,26 @@
         <section class="summary-container">
             <div class="summary-card">
                 <div class="summary-main" id="temp-card">
-
+                    <span>Alerta: Temperatura</span>
+                    <h1 id="critico-titulo"></h1>
                 </div>
                 <div class="summary-footer ">
-                    <h1>Temperatura (C°)</h1>
+                    <h1>Crítico: Fazenda X</h1>
                 </div>
             </div>
             <div class="summary-card">
                 <div class="summary-main" id="umid-card">
-
+                    <span>10 fazendas</span>
+                    <h1>50 Lotes</h1>
                 </div>
                 <div class="summary-footer ">
-                    <h1>Umidade (%)</h1>
+                    <h1>Monitorando</h1>
                 </div>
             </div>
             <div class="summary-card">
                 <div class="summary-main">
-                    <h1>90%</h1>
+                    <span>Médio</span>
+                    <h1 id="desempenho-titulo"></h1>
                 </div>
                 <div class="summary-footer ">
                     <h1>Desempenho Total</h1>
@@ -157,86 +160,15 @@
             </div>
             <div class="summary-card">
                 <div class="summary-main">
-                    <h1> 2</h1>
+                    <span>Lucratividade /mês</span>
+                    <h1>R$5129,92</h1>
                 </div>
                 <div class="summary-footer ">
-                    <h1>Alerta Logs</h1>
+                    <h1>Produtividade</h1>
                 </div>
             </div>
         </section>
 
-        <section class="temp-container">
-            <div class="left-temp">
-                <h4>Temperatura Média (°C)</h4>
-                <section>
-                    <canvas id="lm35Temperatura"></canvas>
-                </section>
-            </div>
-            <div class="right-temp">
-                <div class="header-right-temp">
-                    <canvas id="qtdLm35"></canvas>
-                </div>
-                <h4>Informação Geral</h4>
-                <section class="info-right-temp">
-                    <table class="table-temp">
-                        <tr>
-                            <th>Sensores</th><th>Desempenho</th><th>Modelo</th><th>Medição</th>
-                        </tr>
-                        <tr>
-                            <td>
-                                11/1
-                            </td>
-                            <td>
-                                91%
-                            </td>
-                            <td>
-                                LM35
-                            </td>
-                            <td>
-                                Temperatura (C°)
-                            </td>
-                        </tr>
-                    </table>
-                </section>
-            </div>
-        </section>
-
-        <section class="umid-container">
-            <div class="left-umid">
-                <h4>Umidade Média (%)</h4>
-                <section>
-                    <canvas id="dht11Umidade"></canvas>
-                </section>
-            </div>
-            <div class="right-umid">
-                <div class="header-right-umid">
-                    <canvas id="qtdDht11"></canvas>
-                </div>
-                <h4>Informação Geral</h4>
-                <section class="info-right-umid">
-                    <table class="table-umid">
-                        <tr>
-                            <th>Sensores</th><th>Desempenho</th><th>Modelo</th><th>Medição</th>
-                        </tr>
-                        <tr>
-                            <td>
-                                21/9
-                            </td>
-                            <td>
-                                57%
-                            </td>
-                            <td>
-                                DHT11
-                            </td>
-                            <td>
-                                Umidade
-                            </td>
-                        </tr>
-                    </table>
-                </section>
-            </div>
-            </div>
-        </section>
     </main>
 </body>
 

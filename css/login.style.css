@@ -10,7 +10,7 @@ body{
 .row{ 
     display: flex;
     flex-direction: row;
-    width: 80%;
+    width: 85%;
     margin: 0 auto;
 }
 /* colunas */
@@ -18,10 +18,42 @@ body{
     display: flex;
     flex-direction: column;
 }
+.row:nth-child(1) {
+    gap: 5px;
+}
+.row:nth-child(1)  .col:nth-child(1){
+    width: 65%;
+}
+.row:nth-child(1)  .col:nth-child(2){
+    width: 35%;
+}
+.row:nth-child(1)  .col:nth-child(2) select{
+    height: 35px;
+    border: none;
+    background-color: #1877F2;
+    color: #FFF;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s all;
+    border-radius: 3px;
+}
+.row:nth-child(1)  .col:nth-child(2) select:hover{
+    background-color: #1253a8;
+
+}
+.row:nth-child(1)  .col:nth-child(2) select:focus{
+    outline: none;
+}
+.row:nth-child(1)  .col:nth-child(2) select option{
+    background-color: #FFF;
+    color: #1877F2;
+    font-weight: bolder;
+    cursor: pointer;
+}  
 /* caixa/card/container de login */
 .login-box{
     height: 280px;
-    width: 400px;
+    width: 370px;
     background-color: #FFF;
     border-radius: 5px;
     box-shadow: -5px 5px 20px rgba(0, 0, 0, 0.178);
@@ -33,7 +65,7 @@ body{
     font-size: 30px;
     color: #1877F2;
     text-align: center;
-    margin-top: 20px;
+    margin: 20px 0 10px 0;
     font-family: 'Roboto condensed', Arial, Helvetica, sans-serif;
 }
 /* dando margem para a segunda linha (enésimo filho) */
@@ -45,16 +77,14 @@ body{
     width: 100%;
 }
 
-/* mudando dois elementos input e select ao mesmo tempo */
+/* estilos para o input */
 .login-box input{
     width: 100%;
     height: 35px;
-    border-radius: 2px;
-}
-/* estilos para o input */
-.login-box input{
+    border-radius: 3px;
     border: 1px solid rgba(0, 0, 0, 0.267);
     padding-left: 5px;
+    border-radius: 3px;
 }
 /* mudando os estilos quando o input estiver clicado */
 .login-box input:focus{
@@ -63,7 +93,7 @@ body{
 }
 /* etiqueta, label que contem a descrição do input */
 .login-box label{
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 }
 /* estilos do botão */
 .login-box button{

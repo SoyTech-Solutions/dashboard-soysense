@@ -11,32 +11,31 @@
 
 <body>
     <div class="cadastro-box">
-        <h1>Cadastre um novo Monitor</h1>
+        <h1>Cadastre um representante</h1>
         <form id="form_cadastrar_monitor" action="/cadastro" method="POST">
             <div class="row">
                 <div class="col">
-                    <label>Nome Completo:</label>
-                    <input id="input_nome_cliente" name="nome" type="text" required
-                        placeholder="Insira o nome do funcionário">
+                    <label>Usuário:</label>
+                    <input id="input_usuario" type="text" required placeholder="Insirua o usuário">
+                </div>
+                <div class="col">
+                    <label>Representa:</label>
+                    <select id="select_representa_fazenda">
+                        <option value="">Escolher...</option>
+                        <option value="fazenday">Fazenda Z</option>
+                    </select>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <label>Telefone para contato:</label>
-                    <input id="input_telefone_contato" name="telefone" type="text" required
-                        placeholder="Insira o telefone">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <label>Email para contato:</label>
-                    <input id="input_email_contato" name="email" type="text" required placeholder="Insira o email">
+                    <label>Email:</label>
+                    <input id="input_email" type="email" required placeholder="Insira o email">
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <label>Senha:</label>
-                    <input id="input_senha" name="senha" type="password" required placeholder="Insira uma senha">
+                    <input id="input_senha"  type="password" required placeholder="Insira uma senha">
                 </div>
             </div>
             <div class="row">
@@ -47,7 +46,7 @@
                 </div>
             </div>
             <div class="row">
-                <button onclick="Cadastrar()" type="button">Cadastrar novo funcionário</button>
+                <button onclick="Cadastrar()" type="button">Cadastrar representante</button>
             </div>
         </form>
     </div>
@@ -81,64 +80,70 @@
     function Cadastrar() {
 
         // Segue constantes dos input's
-        const nomeCliente = input_nome_cliente.value
-        const telContato = input_telefone_contato.value
-        const emailContato = input_email_contato.value
+        const usuario = input_usuario.value
+        const representaFazenda = select_representa_fazenda.value;
+        const email = input_email.value
         const senha = input_senha.value
         const confirmacaoSenha = input_confirmacao_senha.value
-        let verificacaoTelefone = telContato.replaceAll(" ", "").replaceAll("+", "").replaceAll("-", "").replaceAll("(", "").replaceAll(")", "") // troca todos os parenteses, sinais de "+", "-" e espaços por espaços em branco, para que fique apenas números na hora da verificação.
-        let verificacaoSenha = Number(senha) // Usada na maioria das verificações da senha
+        let contemNumero = false; // serve pra ver se tem numero na senha
         let senhaAutorizada = false // serve para verificar se a senha contém algum caractere numérico
         let listaErro = `` // serve para armazenas as mensagens de erro
-        let contemErro = false // serve para verificar se houve algum erro em qualquer um dos campos
+        let contemErro = false; // serve para verificar se houve algum erro em qualquer um dos campos
 
 
-        if(nomeCliente != "" && telContato != "" && emailContato != "" && senha != "" && confirmacaoSenha != ""){
-            if(!isNaN(Number(nomeCliente))){
-                listaErro += `<p><span><span style="color: red;">&bull;&nbsp;</span>Digite um nome válido, sem caractere numérico!</p>`
+
+        if(usuario != "" && email != "" && senha != "" && confirmacaoSenha != "" ){
+
+            if(representaFazenda == ''){
+                listaErro += `<p><span><span style="color: red;">&bull;&nbsp;</span>O representante deve representar alguma fazenda!</p>`
                 contemErro = true;
             }
 
-            if (isNaN(verificacaoTelefone) || verificacaoTelefone.length != 11) {
-                listaErro += `<p><span ><span style="color: red;">&bull;&nbsp;</span></span>Telefone não correspondente. Tente outro!</p>`
+            if(usuario.length <= 3){
+                listaErro += `<p><span><span style="color: red;">&bull;&nbsp;</span>Digite um nome válido, entre 3-25 caracteres</p>`
                 contemErro = true;
             }
 
-            if (emailContato.indexOf('@') <= 0 || emailContato.indexOf('.') <= 0) {
+            if (email.indexOf('@') <= 0 || email.indexOf('.') <= 0) {
                 listaErro += `<p ><span style="color: red;">&bull;&nbsp;</span>O endereço de Email é invalido!</p>`
                 contemErro = true
 
             }
 
-            if (verificacaoSenha.length < 8 || verificacaoSenha.length > 16 || senha.indexOf('@') <= 0) {
-                listaErro += `<p><span style="color: red;">&bull;&nbsp;</span>A senha deve ser composta de 8-16 digitos com pelo menos um caractere númerico e um simbolo '@'</p>`
-                contemErro = true
-
-            } else for (let contagemSenha = 0; contagemSenha <= 9; contagemSenha++) {
-                verificacaoSenha = senha.indexOf(contagemSenha)
-
-                if (verificacaoSenha >= 0) {
-                    senhaAutorizada = true
-
-                } else if (senhaAutorizada = false) {
-                    listaErro += `<p><span style="color: red;">&bull;&nbsp;</span>A senha deve conter ao menos um caractere numérico</p>`
-                    contemErro = true
+            if(senha.length >= 8 && senha.length <= 16){
+                // percorrendo a senha e verificando se há numero
+                for(let i = 1; i <= senha.length; i++){
+                    if(!isNaN(parseInt(senha[i]))) {
+                        contemNumero = true;
+                        break; // Se encontrou um número, não precisa continuar verificando
+                    }
                 }
-            }
-            if (confirmacaoSenha != senha) {
-                listaErro += `<p><span style="color: red;">&bull;&nbsp;</span>As senhas não coincidem</p>`
+
+                if(contemNumero){
+                    if(senha != confirmacaoSenha){
+                        listaErro += `<p ><span style="color: red;">&bull;&nbsp;</span>As senhas não se combinam!</p>`
+                        contemErro = true
+                }
+                }else{
+                    listaErro += `<p ><span style="color: red;">&bull;&nbsp;</span>Sua senha deve possuir pelo menos 1 caracter numérico!</p>`
+                        contemErro = true
+                }
+            }else{
+
+                listaErro += `<p ><span style="color: red;">&bull;&nbsp;</span>Digite uma senha entre 8-16 caracteres</p>`
                 contemErro = true
+
             }
         }else{
             contemErro = true;
             listaErro += `<p ><span style="color: red;">&bull;&nbsp;</span>Preencha todos os campos</p>`
         }
-        // if (nomeCliente == "") {
+        // if (usuario == "") {
         //     listaErro += `<p style="color: red">Por favor, insira um nome</p>`
         //     contemErro = true
 
         // } else for (let contagemNome = 0; contagemNome <= 9; contagemNome++) {
-        //     verificacaoNomeCliente = nomeCliente.indexOf(contagemNome)
+        //     verificacaoNomeCliente = usuario.indexOf(contagemNome)
 
         //     if (verificacaoNomeCliente >= 0) {
         //         listaErro += `<p style="color: red">Nome inválido</p>`
@@ -153,11 +158,11 @@
         //     listaErro += `<p style="color: red">Telefone inválido</p>`
         //     contemErro = true
         // }
-        // if (emailContato == "") {
+        // if (email == "") {
         //     listaErro += `<p style="color: red">Por favor, insira um email</p>`
         //     contemErro = true
 
-        // } else if (emailContato.indexOf('@') <= 0 || emailContato.indexOf('.') <= 0) {
+        // } else if (email.indexOf('@') <= 0 || email.indexOf('.') <= 0) {
         //     listaErro += `<p style="color: red">Email inválido</p>`
         //     contemErro = true
 
@@ -203,9 +208,11 @@
 
         }else{
             
-            modal_corretos.innerHTML = `<p><span style="color: green;">&bull;&nbsp;</span>O <span style="color: green;">${nomeCliente}</span> foi cadastrado com sucesso!</p>`
+            modal_corretos.innerHTML = `<p><span style="color: green;">&bull;&nbsp;</span>O <span style="color: green;">${usuario}</span> foi cadastrado com sucesso!</p>`
 
             modalCorreto.style.display = 'flex'; // ativa o modal
+
+            
 
 
             setTimeout(function () {

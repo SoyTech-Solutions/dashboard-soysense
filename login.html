@@ -13,14 +13,21 @@
         <form action="/login" method="POST">
             <div class="row">
                 <div class="col">
-                    <label>Usuário:</label>
-                    <input name="usuario" type="text" id="input_CPF" required placeholder="Insira seu CPF">
+                    <label>Usuário</label>
+                    <input name="usuario" type="text" id="input_username" required placeholder="XXXXXXXXXYY">
+                </div>
+                <div class="col">
+                    <label>&nbsp;</label>
+                    <select id="select_tipo">
+                        <option value="empresa">Empresa</option>
+                        <option value="funcionario">Funcionário</option>
+                    </select>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <label>Senha:</label>
-                    <input name="senha" type="password" id="input_senha" required placeholder="Insira sua senha">
+                    <input name="senha" type="password" id="input_senha" required placeholder="********">
                 </div>
             </div>
             <div class="row">
@@ -34,24 +41,34 @@
 <script>
     function chkLogin()
     {
-        const cpf = input_CPF.value; //Se for número, .length não funciona
+        const username = input_username.value; //Se for número, .length não funciona
+        const tipoUser = select_tipo.value;
         const senha = input_senha.value;
-    
-        if(cpf.length == 11)
-        {
-            if(cpf == "12345678901" && senha == "teste123")
-            {
-                alert("Login realizado com sucesso!");
-                window.location.assign("dashboard.html");
+
+        let usuarioVerificado = false;
+
+        if(username != '' && tipoUser != '' && senha != '' ){
+
+            if(tipoUser == 'empresa'){
+                if(username == 'sorriso' && senha == 'sorriso123'){
+                    usuarioVerificado = true;
+                }else{
+                    alert('Usuário ou senha incorretas. Tente novamente!')
+                }
+            }else if(tipoUser == 'funcionario'){
+                if(username == 'fernanda' && senha == 'fe123'){
+                    usuarioVerificado = true;
+                }else{
+                    alert('Usuário ou senha incorretas. Tente novamente!')
+                }
             }
-            else
-            {
-                alert("CPF ou senha inválidos. Tente novamente!")
-            }
+        }else{
+            alert('Preencha todos os campos!')
         }
-        else
-        {
-            alert("CPF precisa ter 11 dígitos!");
+
+        if(usuarioVerificado){
+            alert('Autenticado com sucesso!');
+            window.location.assign('dashboard.html');
         }
     }
 </script>

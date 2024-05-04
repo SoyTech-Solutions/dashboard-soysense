@@ -148,38 +148,82 @@ var qtdDht11 = new Chart(
 
 var paginacao = {};
 var tempo = {};
-function obterDados(grafico, endpoint) {
-    var http = new XMLHttpRequest();
-    http.open('GET', 'http://localhost:3300/sensores/' + endpoint, false);
-    http.send(null);
-    var valores = JSON.parse(http.responseText);
-    if (paginacao[endpoint] == null) {
-        paginacao[endpoint] = 0;
+function obterDados(grafico, valoresAleatorio) {
+    var valores = valoresAleatorio;
+    if (paginacao[valoresAleatorio] == null) {
+        paginacao[valoresAleatorio] = 0;
     }
-    if (tempo[endpoint] == null) {
-        tempo[endpoint] = 0;
+    if (tempo[valoresAleatorio] == null) {
+        tempo[valoresAleatorio] = 0;
     }
     // Exibir à partir do último elemento exibido anteriormente
-    var ultimaPaginacao = paginacao[endpoint];
-    paginacao[endpoint] = valores.length;
+    var ultimaPaginacao = paginacao[valoresAleatorio];
+    paginacao[valoresAleatorio] = valores.length;
     var valores = valores.slice(ultimaPaginacao);
-    valores.forEach((valor) => {
-        //Máximo de 60 itens exibidos no gráfico
-        if (grafico.data.labels.length == 10 && grafico.data.datasets[0].data.length == 10) {
-            grafico.data.labels.shift();
-            grafico.data.datasets[0].data.shift();
-        }
+    //Máximo de 60 itens exibidos no gráfico
+    if (grafico.data.labels.length == 10 && grafico.data.datasets[0].data.length == 10) {
+        grafico.data.labels.shift();
+        grafico.data.datasets[0].data.shift();
+    }
 
-        grafico.data.labels.push(`${horas}:${minutos}`);
-        grafico.data.datasets[0].data.push(parseFloat(valor));
-        grafico.update();
-    })
+
+    // capturar a hora
+    var dateObj = new Date();
+
+    var horas = dateObj.getHours();
+    var minutos = dateObj.getMinutes(); 
+    var segundos = dateObj.getSeconds();
+
+    grafico.data.labels.push(`${horas}:${minutos}`);
+    grafico.data.datasets[0].data.push(parseFloat(valoresAleatorio));
+    grafico.update();
     
 }
 
-
 setInterval(() => {
-    obterDados(lm35Temperatura, 'lm35/temperatura');
-    obterDados(dht11Umidade, 'dht11/umidade');
-}, 1000);
+    let minTemp = 20;
+    let maxTemp = 30;
 
+    let minUmid = 10;
+    let maxUmid = 15;
+
+    let somaTemp = 0;
+    let somaUmid = 0;
+
+    // supondo 10 sensores ativos e 1 inativo
+    for (let i = 0; i < 11; i++) {
+        if(i == 0){ 
+            continue; 
+        }
+        let num2 = parseInt(Math.random() * (maxTemp - minTemp) + minTemp);
+        somaTemp += num2;
+    } 
+
+    // supondo 21 dht11 sensores ativos e 9 inativo
+    for (let i = 0; i < 21; i++) {
+        if(i < 9){ 
+            continue; 
+        } 
+
+        let num1 = parseInt(Math.random() * (maxUmid - minUmid) + minUmid);
+        somaUmid += num1;
+    } 
+
+    let mediaTemp = somaTemp / 10;
+    let mediaUmid = somaUmid / 10;
+
+    var valoresAleatorio = `${mediaUmid};${mediaTemp}`;
+
+    valoresAleatorio = valoresAleatorio.split(';')
+    console.log(valoresAleatorio);
+
+    umidCard.innerHTML = `
+        <h2> ${valoresAleatorio[0]}%</h2>
+    `
+    tempCard.innerHTML = `
+        <h2> ${valoresAleatorio[1]}°C</h2>
+    `
+
+    obterDados(dht11Umidade, valoresAleatorio[0]);
+    obterDados(lm35Temperatura, valoresAleatorio[1]);
+}, 1000);
