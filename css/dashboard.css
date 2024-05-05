@@ -33,7 +33,7 @@
     margin-top: 15px;
 }
 
-/* caard 3 */
+/* card 3 */
 .summary-card:nth-child(3) > .summary-footer{
     background-color: #1d7fff;
 }
@@ -66,4 +66,30 @@
 .summary-main{
     height: calc(100% - 50px);
     padding: 10px;
+}
+
+/* grafico de desempenho total*/
+.desempenho-container{
+    width: 90%;
+    height: 410px;
+    margin: 30px auto 30px auto;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.desempenho-container h4{
+    text-align: center;
+    font-family: 'montserrat', Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+}
+.desempenho-container section{
+    margin: 20px auto 0 auto;
+    width: 95%;
+}
+.desempenho-grafico{
+    width: 60%;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 7px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.192);
 }
