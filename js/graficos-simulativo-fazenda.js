@@ -1,6 +1,7 @@
 var umidCard = document.querySelector('#umid-card');
 var tempCard = document.querySelector('#temp-card');
 
+var tituloDesempenho = document.querySelector('#desempenho-titulo');
 
 /* -- lm35Temperatura */
 var contextoLm35Temperatura = document.getElementById('lm35Temperatura').getContext('2d');
