@@ -50,7 +50,7 @@
 }
 /* card 4 */
 .summary-card:nth-child(4) > .summary-footer{
-    background-color: #5CB85C;
+    background-color: #33be33;
 }
 .summary-card:nth-child(4) > .summary-main{
     background-color: #5cb85cad;
@@ -97,8 +97,8 @@
 /* Gráfico das fazendas com problemas */
 
 .problemas-container{
-    width: auto;
-    height: auto;
+    width: 90%;
+    height: 410px;
     margin: 30px auto 30px auto;
     display: flex;
     flex-direction: row;
@@ -117,7 +117,7 @@
 }
 
 .problemas-grafico{
-    width: 60%;
+    width: 50%; 
     height: 100%;
     background-color: #ffffff;
     border-radius: 7px;
