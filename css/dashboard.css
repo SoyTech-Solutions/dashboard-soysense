@@ -93,3 +93,34 @@
     border-radius: 7px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.192);
 }
+
+/* Gráfico das fazendas com problemas */
+
+.problemas-container{
+    width: auto;
+    height: auto;
+    margin: 30px auto 30px auto;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.problemas-container h4{
+    text-align: center;
+    font-family: 'montserrat', Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+}
+
+.problemas-container section{
+    margin: 20px auto 0 auto;
+    width: 55%;
+}
+
+.problemas-grafico{
+    width: 60%;
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 7px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.192);
+}
+
