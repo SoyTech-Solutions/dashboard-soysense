@@ -90,4 +90,33 @@ var Problemas =
                         }
                     }
                 });
+
+/* Valor recuperado no mês */
+
+var valorRecuperado = document.getElementById('valorRecuperado').getContext('2d');
+var valor = 
+    new Chart(valorRecuperado,        
+        {
+            type: 'line',
+            data: {
+                labels: ['Novembro/2023','Dezembro/2023','Janeiro/2024', 'Fevereiro/2024', 'Março/2024', 'Abril/2024'],
+                datasets: [{
+                    label: 'Valor em R$',
+                    data: [5013.24, 4751.85, 4955.41, 5472.14, 4875.27, 5129.92],
+
+                    backgroundColor: [
+                       '#33BE33',
+                    ],
+
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
         
