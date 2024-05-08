@@ -120,3 +120,90 @@ var valor =
             }
         });
         
+/* Registros d Alerts*/
+
+var RegistroA = document.getElementById('RegistroA').getContext('2d');
+var valor = 
+    new Chart(RegistroA,     
+        {
+
+            type: 'line',
+            data: {
+                labels: [
+                    'Janeiro',
+                    'Fevereiro',
+                    'Março',
+                    'Abril',
+                    'Maio',
+                    'Junho',
+                    'Julho',
+                    'Agosto',
+                    'Setembro',
+                    'Outubro',
+                    'Novembro',
+                    'Dezembro'
+                  ],
+                datasets: [
+                    {
+                        label: 'Fazenda X',
+                        data: [1,2,3,4,5,6,7,8,9,10,11,12],
+                        borderWidth: 1,
+                        backgroundColor: "#ff6384",
+                        borderColor: "#ff6384"
+                    },
+                    {
+                        label: 'Fazenda Y',
+                        data: [12,11,10,9,8,7,6,5,4,3,2,1],
+                        borderWidth: 1,
+                        backgroundColor: 'rgb(75, 192, 192)',
+                        borderColor: 'rgb(75, 192, 192)'
+                    }
+                ]
+
+                /* Ideia de Grafico de Radar 
+            type: 'radar',
+            data: {
+                labels: [
+                    'Janeiro',
+                    'Fevereiro',
+                    'Março',
+                    'Abril',
+                    'Maio',
+                    'Junho',
+                    'Julho',
+                    'Agosto',
+                    'Setembro',
+                    'Outubro',
+                    'Novembro',
+                    'Dezembro'
+                  ],
+                  datasets: [{
+                    label: 'Fazenda X',
+                    data: [12,11,10,9,8,7,6,5,4,3,2,1],
+                    fill: true,
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    pointBackgroundColor: 'rgb(255, 99, 132)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgb(255, 99, 132)'
+                  }, {
+                    label: 'Fazenda Y',
+                    data: [1,2,3,4,5,6,7,8,9,10,11,12],
+                    fill: true,
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgb(54, 162, 235)',
+                    pointBackgroundColor: 'rgb(54, 162, 235)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgb(54, 162, 235)'
+                  }]*/
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
