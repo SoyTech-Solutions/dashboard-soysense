@@ -102,10 +102,11 @@ var valor =
                 labels: ['Novembro/2023','Dezembro/2023','Janeiro/2024', 'Fevereiro/2024', 'Março/2024', 'Abril/2024'],
                 datasets: [{
                     label: 'Valor em R$',
+                    fill: true,
                     data: [5013.24, 4751.85, 4955.41, 5472.14, 4875.27, 5129.92],
 
                     backgroundColor: [
-                       '#33BE33',
+                       '#33BE33AA',
                     ],
 
                     borderWidth: 1
@@ -146,58 +147,72 @@ var valor =
                 datasets: [
                     {
                         label: 'Fazenda X',
-                        data: [1,2,3,4,5,6,7,8,9,10,11,12],
-                        borderWidth: 1,
-                        backgroundColor: "#ff6384",
+                        data: [1,5,0,0,9,3,2,7,11,3,2,8],
+                        borderWidth: 3,
+                        pointRadius: 0,
+                        backgroundColor: "#ff110082",
                         borderColor: "#ff6384"
                     },
                     {
                         label: 'Fazenda Y',
-                        data: [12,11,10,9,8,7,6,5,4,3,2,1],
-                        borderWidth: 1,
+                        data: [0,3,4,3,6,4,8,2,1,7,6,4],
+                        borderWidth: 3,
+                        pointRadius: 0,
                         backgroundColor: 'rgb(75, 192, 192)',
                         borderColor: 'rgb(75, 192, 192)'
+                        
                     }
                 ]
 
-                /* Ideia de Grafico de Radar 
-            type: 'radar',
-            data: {
-                labels: [
-                    'Janeiro',
-                    'Fevereiro',
-                    'Março',
-                    'Abril',
-                    'Maio',
-                    'Junho',
-                    'Julho',
-                    'Agosto',
-                    'Setembro',
-                    'Outubro',
-                    'Novembro',
-                    'Dezembro'
-                  ],
-                  datasets: [{
-                    label: 'Fazenda X',
-                    data: [12,11,10,9,8,7,6,5,4,3,2,1],
-                    fill: true,
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    borderColor: 'rgb(255, 99, 132)',
-                    pointBackgroundColor: 'rgb(255, 99, 132)',
-                    pointBorderColor: '#fff',
-                    pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: 'rgb(255, 99, 132)'
-                  }, {
-                    label: 'Fazenda Y',
-                    data: [1,2,3,4,5,6,7,8,9,10,11,12],
-                    fill: true,
-                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
-                    borderColor: 'rgb(54, 162, 235)',
-                    pointBackgroundColor: 'rgb(54, 162, 235)',
-                    pointBorderColor: '#fff',
-                    pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: 'rgb(54, 162, 235)'
-                  }]*/
+            // type: 'radar',
+            // data: {
+            //     labels: [
+            //         'Janeiro',
+            //         'Fevereiro',
+            //         'Março',
+            //         'Abril',
+            //         'Maio',
+            //         'Junho',
+            //         'Julho',
+            //         'Agosto',
+            //         'Setembro',
+            //         'Outubro',
+            //         'Novembro',
+            //         'Dezembro'
+            //       ],
+            //       datasets: [
+            //         {
+            //             label: 'Fazenda A',
+            //             data: [5,8,0,9,2,12,3,0,1,7,5,1],
+            //             fill: true,
+            //             backgroundColor: '#000729',
+            //             borderColor: 'rgb(255, 99, 132)',
+            //             pointBackgroundColor: 'rgb(255, 99, 132)',
+            //             pointBorderColor: '#fff',
+            //             pointHoverBackgroundColor: '#fff',
+            //             pointHoverBorderColor: 'rgb(255, 99, 132)'
+            //           },
+            //         {
+            //         label: 'Fazenda X',
+            //         data: [5,1,0,9,2,7,3,0,1,7,2,1],
+            //         fill: true,
+            //         backgroundColor: 'rgba(255, 99, 132, 0.2)',
+            //         borderColor: 'rgb(255, 99, 132)',
+            //         pointBackgroundColor: 'rgb(255, 99, 132)',
+            //         pointBorderColor: '#fff',
+            //         pointHoverBackgroundColor: '#fff',
+            //         pointHoverBorderColor: 'rgb(255, 99, 132)'
+            //       }, {
+            //         label: 'Fazenda Y',
+            //         data: [11,3,1,0,7,2,4,9,0,0,1,2],
+            //         fill: true,
+            //         backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            //         borderColor: 'rgb(54, 162, 235)',
+            //         pointBackgroundColor: 'rgb(54, 162, 235)',
+            //         pointBorderColor: '#fff',
+            //         pointHoverBackgroundColor: '#fff',
+            //         pointHoverBorderColor: 'rgb(54, 162, 235)'
+            //       }]
             },
             options: {
                 scales: {

@@ -153,7 +153,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.192);
 }
 
-/* Gráfico Registro de alerts*/
+/* Gráfico Registro de alertas*/
 
 .registro-container{
     width: 90%;
@@ -163,6 +163,7 @@
     flex-direction: row;
     gap: 10px;
 }
+
 
 .registro-container h4{
     text-align: center;
