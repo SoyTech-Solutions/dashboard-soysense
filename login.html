@@ -47,21 +47,20 @@
 
         let usuarioVerificado = false;
 
-        if(username != '' && tipoUser != '' && senha != '' ){
+        if(username != '' && senha != '' ){
 
-            if(tipoUser == 'empresa'){
-                if(username == 'sorriso' && senha == 'sorriso123'){
-                    usuarioVerificado = true;
-                }else{
-                    alert('Usuário ou senha incorretas. Tente novamente!')
-                }
-            }else if(tipoUser == 'funcionario'){
+            // if(tipoUser == 'empresa'){
+            //     if(username == 'sorriso' && senha == 'sorriso123'){
+            //         usuarioVerificado = true;
+            //     }else{
+            //         alert('Usuário ou senha incorretas. Tente novamente!')
+            //     }
+            // }else if(tipoUser == 'funcionario'){
                 if(username == 'fernanda' && senha == 'fe123'){
                     usuarioVerificado = true;
                 }else{
                     alert('Usuário ou senha incorretas. Tente novamente!')
                 }
-            }
         }else{
             alert('Preencha todos os campos!')
         }
