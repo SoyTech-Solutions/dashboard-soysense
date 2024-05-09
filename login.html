@@ -9,20 +9,20 @@
 </head>
 <body>
     <div class="login-box">
-        <h1>Login</h1>
+        <h1>Login SoySense</h1>
         <form action="/login" method="POST">
             <div class="row">
                 <div class="col">
-                    <label>Usuário</label>
+                    <label>Usuário:</label>
                     <input name="usuario" type="text" id="input_username" required placeholder="XXXXXXXXXYY">
                 </div>
-                <div class="col">
+                <!-- <div class="col">
                     <label>&nbsp;</label>
                     <select id="select_tipo">
                         <option value="empresa">Empresa</option>
                         <option value="funcionario">Funcionário</option>
                     </select>
-                </div>
+                </div> -->
             </div>
             <div class="row">
                 <div class="col">
@@ -42,26 +42,25 @@
     function chkLogin()
     {
         const username = input_username.value; //Se for número, .length não funciona
-        const tipoUser = select_tipo.value;
+        // const tipoUser = select_tipo.value;
         const senha = input_senha.value;
 
         let usuarioVerificado = false;
 
-        if(username != '' && tipoUser != '' && senha != '' ){
+        if(username != '' && senha != '' ){
 
-            if(tipoUser == 'empresa'){
-                if(username == 'sorriso' && senha == 'sorriso123'){
-                    usuarioVerificado = true;
-                }else{
-                    alert('Usuário ou senha incorretas. Tente novamente!')
-                }
-            }else if(tipoUser == 'funcionario'){
+            // if(tipoUser == 'empresa'){
+            //     if(username == 'sorriso' && senha == 'sorriso123'){
+            //         usuarioVerificado = true;
+            //     }else{
+            //         alert('Usuário ou senha incorretas. Tente novamente!')
+            //     }
+            // }else if(tipoUser == 'funcionario'){
                 if(username == 'fernanda' && senha == 'fe123'){
                     usuarioVerificado = true;
                 }else{
                     alert('Usuário ou senha incorretas. Tente novamente!')
                 }
-            }
         }else{
             alert('Preencha todos os campos!')
         }
