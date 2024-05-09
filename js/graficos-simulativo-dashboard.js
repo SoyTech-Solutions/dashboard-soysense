@@ -70,7 +70,7 @@ var Problemas =
                     data: {
                         labels: ['Fazenda1', 'Fazenda2', 'Fazenda3'],
                         datasets: [{
-                            label: '# of Votes',
+                            label: 'Quantidade de problemas',
                             data: [12, 19, 3],
         
                             backgroundColor: [
