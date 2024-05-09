@@ -13,6 +13,8 @@
     <script src="./js/side-bar.js" defer></script>
     <script src="./js/graficos-simulativo-fazenda.js" defer></script>
 
+
+
     <!-- styles -->
     <link rel="stylesheet" href="./css/global-style.css">
     <link rel="stylesheet" href="./css/side-bar.css">
@@ -53,21 +55,24 @@
                             <a href=""><img width="10"  style="transform: rotate(270deg);" height="10" src="https://img.icons8.com/material-outlined/24/FFFFFF/left-down2.png" alt="left-down2"/>&nbsp;Sensor</a>
                         </li>
                         <li class="accordion-subitem">
-                            <a href="./gerenciar-monitor.html"><img width="10"  style="transform: rotate(270deg);" height="10" src="https://img.icons8.com/material-outlined/24/FFFFFF/left-down2.png" alt="left-down2"/>&nbsp;Monitor</a>
+                            <a href="./gerenciar-monitor.html"><img width="10"  style="transform: rotate(270deg);" height="10" src="https://img.icons8.com/material-outlined/24/FFFFFF/left-down2.png" alt="left-down2"/>&nbsp;Gestor</a>
+                        </li>
+                        <li class="accordion-subitem">
+                            <a href="./gerenciar-funcionario.html"><img width="10"  style="transform: rotate(270deg);" height="10" src="https://img.icons8.com/material-outlined/24/FFFFFF/left-down2.png" alt="left-down2"/>&nbsp;Funcionário</a>
                         </li>
                     </ul>
                 </li>
                 <li class="accordion-item">
-                    <div class="accordion-item-header">
+                    <div class="accordion-item-header alerta-item">
                         <img width="17" height="17" src="https://img.icons8.com/material-outlined/24/FFFFFF/address.png" alt="address"/>
                         <span>Complexo</span>
                     </div>
                     <ul class="accordion-submenu">
-                        <li class="accordion-subitem">
-                            <a href=""><img width="10"  style="transform: rotate(270deg);" height="10" src="https://img.icons8.com/material-outlined/24/FFFFFF/left-down2.png" alt="left-down2"/>&nbsp;Fazenda X</a>
+                        <li class="accordion-subitem ">
+                            <a href="fazenda.html" class="alerta-item"><img width="10"  style="transform: rotate(270deg);" height="10" src="https://img.icons8.com/material-outlined/24/FFFFFF/left-down2.png" alt="left-down2"/>&nbsp;Fazenda X</a>
                         </li>
                         <li class="accordion-subitem">
-                            <a href=""><img width="10"  style="transform: rotate(270deg);" height="10" src="https://img.icons8.com/material-outlined/24/FFFFFF/left-down2.png" alt="left-down2"/>&nbsp;Fazenda Y</a>
+                            <a href="fazenday.html"><img width="10"  style="transform: rotate(270deg);" height="10" src="https://img.icons8.com/material-outlined/24/FFFFFF/left-down2.png" alt="left-down2"/>&nbsp;Fazenda Y</a>
                         </li>
                     </ul>
                 </li>
@@ -132,11 +137,11 @@
         </header>
         <section class="summary-container">
             <div class="summary-card">
-                <div class="summary-main" id="temp-card">
+                <div class="summary-main alerta-bloco" id="temp-card">
 
                 </div>
-                <div class="summary-footer ">
-                    <h1>Temperatura (C°)</h1>
+                <div class="summary-footer alerta-bloco">
+                    <h1>Temperatura (°C)</h1>
                 </div>
             </div>
             <div class="summary-card">
@@ -152,15 +157,15 @@
                     <h1>90%</h1>
                 </div>
                 <div class="summary-footer ">
-                    <h1>Desempenho Total</h1>
+                    <h1>Desempenho</h1>
                 </div>
             </div>
             <div class="summary-card">
                 <div class="summary-main">
-                    <h1> 2</h1>
+                    <h1 id="contagem-temp-critico">11</h1>
                 </div>
                 <div class="summary-footer ">
-                    <h1>Alerta Logs</h1>
+                    <h1>Alertas /mês</h1>
                 </div>
             </div>
         </section>
@@ -193,7 +198,7 @@
                                 LM35
                             </td>
                             <td>
-                                Temperatura (C°)
+                                Temperatura (°C)
                             </td>
                         </tr>
                     </table>
@@ -238,6 +243,7 @@
             </div>
         </section>
     </main>
+
 </body>
 
 </html>

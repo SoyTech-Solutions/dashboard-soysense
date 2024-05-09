@@ -2,10 +2,10 @@
 /* card 1 */
 
 .summary-card:nth-child(1) > .summary-footer{
-    background-color: #ff4335;
+    background-color: rgb(208, 22, 22);
 }
 .summary-card:nth-child(1) > .summary-main{
-    background-color: #ff7065;
+    background-color: rgb(235, 22, 22);
     color: #fff;
 }
 .summary-card:nth-child(1) > .summary-main > span{

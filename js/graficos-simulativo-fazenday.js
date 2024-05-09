@@ -13,8 +13,8 @@ var lm35Temperatura = new Chart(
             datasets: [{
                 label: 'Temperatura',
                 type: 'line',
-                borderColor: ['#EB1616'],
-                backgroundColor: ['#eb1616b2']
+                borderColor: ['#ffd902'],
+                backgroundColor: ['#ffe13588']
             }]
         },
         options: {
@@ -180,16 +180,12 @@ function obterDados(grafico, valoresAleatorio) {
     
 }
 
-var tituloTempCritico = document.querySelector('#contagem-temp-critico');
-
-var contagemTempCritico = 12;
-
 setInterval(() => {
-    let minTemp = 30;
-    let maxTemp = 35;
+    let minTemp = 20;
+    let maxTemp = 30;
 
-    let minUmid = 12;
-    let maxUmid = 14.5;
+    let minUmid = 13;
+    let maxUmid = 14;
 
     let somaTemp = 0;
 
@@ -201,8 +197,6 @@ setInterval(() => {
         let num2 = parseInt(Math.random() * (maxTemp - minTemp) + minTemp);
         somaTemp += num2;
     } 
-
-    // supondo 21 dht11 sensores ativos e 9 inativo 
 
         let umidade = parseFloat(Math.random() * (maxUmid - minUmid) + minUmid).toFixed(2);
 
@@ -222,9 +216,4 @@ setInterval(() => {
 
     obterDados(dht11Umidade, valoresAleatorio[0]);
     obterDados(lm35Temperatura, valoresAleatorio[1]);
-
-    tituloTempCritico.textContent = contagemTempCritico;
-
-    contagemTempCritico++;
-    
 }, 1000);

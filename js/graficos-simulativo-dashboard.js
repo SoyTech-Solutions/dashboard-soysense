@@ -1,25 +1,4 @@
-var tituloCritico = document.querySelector('#critico-titulo');
-var tituloDesempenho = document.querySelector('#desempenho-titulo');
 
-setInterval(() => {
-
-    // ----------crítico
-    let minTemp = 31;
-    let maxTemp = 37;
-
-    let critico = parseInt(Math.random() * (maxTemp - minTemp) + minTemp);
-
-    tituloCritico.innerHTML = `${critico}°C`;
-
-
-    // -----------desempenho
-    let minDes = 95;
-    let maxDes = 100;
-
-    let desempenho = parseInt(Math.random() * (maxDes - minDes) + minDes);
-    tituloDesempenho.innerHTML = `${desempenho}%`;
-
-}, 1000);
 
 /*----Desempenho total por mes */
 var contextoDesempenhoT = document.getElementById('desempenhoT').getContext('2d');
@@ -68,15 +47,14 @@ var Problemas =
                 {
                     type: 'pie',
                     data: {
-                        labels: ['Fazenda1', 'Fazenda2', 'Fazenda3'],
+                        labels: ['Fazenda x', 'Fazenda y'],
                         datasets: [{
                             label: 'Quantidade de problemas',
-                            data: [12, 19, 3],
+                            data: [11, 7],
         
                             backgroundColor: [
                                '#8B008B',
                                '#00008B',
-                               '#1E90FF',
                             ],
         
                             borderWidth: 1
@@ -222,3 +200,27 @@ var valor =
                 }
             }
         });
+
+
+var tempTitle = document.querySelector('#critico-titulo-temp');
+var desTitle = document.querySelector('#desempenho-titulo');
+
+
+setInterval(() => {
+    let minTemp = 30;
+    let maxTemp = 35;
+
+    let minDes = 90;
+    let maxDes = 100;
+    
+    let temperatura = parseInt(Math.random() * (maxTemp - minTemp) + minTemp);
+    let desempenho = parseInt(Math.random() * (maxDes - minDes) + minDes);
+
+    tempTitle.textContent = `
+         ${temperatura}°C
+    `
+    desTitle.textContent = `
+         ${desempenho}%
+    `
+
+}, 1000);

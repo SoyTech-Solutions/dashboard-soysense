@@ -23,10 +23,11 @@
     color: #FFF;
 }
 .summary-card:nth-child(4) > .summary-footer{
-    background-color: #D9534F;
+    background-color: rgb(208, 22, 22) !important;
+
 }
 .summary-card:nth-child(4) > .summary-main{
-    background-color: #d9544fab;
+    background-color: rgb(235, 22, 22) !important;
     color: #ffffff;
 }
 .summary-main{
@@ -176,3 +177,13 @@
     font-size: 14px;
     padding: 10px;
 }
+
+
+.summary-main.alerta-bloco{
+    background-color: rgb(235, 22, 22) !important;
+
+ }
+
+ .summary-footer.alerta-bloco{
+    background-color: rgb(208, 22, 22) !important;
+ }

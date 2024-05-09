@@ -11,14 +11,16 @@
 
     <!-- estático js script -->
     <script src="./js/side-bar.js" defer></script>
-    <script src="./js/modal-adicional-funcionario.js" defer></script>
+    <!-- <script src="./js/graficos-simulativo-fazenda.js" defer></script> -->
+    <script src="./js/graficos-simulativo-fazenday.js" defer></script>
+
+
 
     <!-- styles -->
     <link rel="stylesheet" href="./css/global-style.css">
     <link rel="stylesheet" href="./css/side-bar.css">
-    <!-- <link rel="stylesheet" href="./css/dashboard.css"> -->
+    <link rel="stylesheet" href="./css/fazenda.css">
     <link rel="stylesheet" href="./css/header-main.css">
-    <link rel="stylesheet" href="./css/gerenciar-monitor.css">
 </head>
 <body>
     <aside class="side-bar">
@@ -35,14 +37,14 @@
         <div class="line-side-bar"></div>
         <nav class="nav-side-bar">
             <ul class="accordion-menu">
-                <li class="nav-normal-item">
+                <li class="nav-normal-item dash-on">
                     <a href="./dashboard.html">
-                        <img width="17" height="17" src="https://img.icons8.com/material-outlined/24/FFFFFF/dashboard-layout.png" alt="dashboard-layout"/>    
+                        <img width="17" height="17" src="https://img.icons8.com/material-outlined/24/FFFFFF/dashboard-layout.png" alt="dashboard-layout"/>
                         Dashboard
                     </a>
                 </li>
                 <li class="accordion-item">
-                    <div class="accordion-item-header dash-on">
+                    <div class="accordion-item-header">
                         <img width="20" height="20" src="https://img.icons8.com/material-outlined/24/FFFFFF/maintenance.png" alt="maintenance"/>
                         <span>Gerenciar</span>
                     </div>
@@ -93,7 +95,7 @@
                     </ul>
                 </li>
                 <li class="nav-normal-item">
-                    <a href="">
+                    <a href="">                    
                         <img width="17" height="17" src="https://img.icons8.com/material-outlined/24/FFFFFF/fine-print.png" alt="fine-print"/>                    
                         Benchmarking
                     </a>
@@ -130,81 +132,119 @@
 
         <header class="header-dashboard">
             <div class="inner-header">
-                <h1>Gerenciar</h1>
-                <a href="./gerenciar-monitor.html">/Funcionário</a>
+                <h1>Complexo</h1>
+                <a href="#">/fazenda-y</a>
             </div>
         </header>
-        <section class="search-container">
-            <div class="search-wrapper">
-                <input type="text" placeholder="Pesquisar...">
-                <button><img width="20" height="20" src="https://img.icons8.com/ios-filled/50/FFFFFF/search--v1.png" alt="search--v1"/></button>
-            </div>
-        </section>
-        <section class="table-container">
-            <div class="main-table-container">
-                <table>
-                    <tr>
-                        <th>Funcionário</th>
-                        <th>Email</th>
-                        <th>Fazenda</th>
-                        <th>Gerenciar</th>
-                    </tr>
-                    <tr>
-                        <td>Julia</td>
-                        <td>julia.duda@sptech.school</td>
-                        <td>Fazenda X</td>
-                        <td>
-                            <button class="btn-edi">
-                                <img width="17" height="17" src="https://img.icons8.com/material-outlined/24/FFFFFF/edit--v1.png" alt="edit--v1"/>
-                            </button>
-                            <button class="btn-del">
-                                <img width="17" height="17" src="https://img.icons8.com/material-outlined/24/FFFFFF/trash--v1.png" alt="trash--v1"/>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Pedro</td>
-                        <td>pedro.santos@sptech.school</td>
-                        <td>Fazenda X</td>
-                        <td>
-                            <button class="btn-edi">
-                                <img width="17" height="17" src="https://img.icons8.com/material-outlined/24/FFFFFF/edit--v1.png" alt="edit--v1"/>
-                            </button>
-                            <button class="btn-del">
-                                <img width="17" height="17" src="https://img.icons8.com/material-outlined/24/FFFFFF/trash--v1.png" alt="trash--v1"/>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Lais</td>
-                        <td>lais.figueroa@sptech.school</td>
-                        <td>Fazenda Y</td>
-                        <td>
-                            <button class="btn-edi">
-                                <img width="17" height="17" src="https://img.icons8.com/material-outlined/24/FFFFFF/edit--v1.png" alt="edit--v1"/>
-                            </button>
-                            <button class="btn-del">
-                                <img width="17" height="17" src="https://img.icons8.com/material-outlined/24/FFFFFF/trash--v1.png" alt="trash--v1"/>
-                            </button>
-                        </td>
-                    </tr>
+        <section class="summary-container">
+            <div class="summary-card">
+                <div class="summary-main" id="temp-card">
 
-                </table>
+                </div>
+                <div class="summary-footer ">
+                    <h1>Temperatura (°C)</h1>
+                </div>
             </div>
-            <div class="footer-table-container">
-                <p>Funcionários registrados: <span>3</span></p>
-                <button id="openModalAdicionarFuncionario">Adicionar +</button>
+            <div class="summary-card">
+                <div class="summary-main" id="umid-card">
+
+                </div>
+                <div class="summary-footer ">
+                    <h1>Umidade (%)</h1>
+                </div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-main">
+                    <h1>90%</h1>
+                </div>
+                <div class="summary-footer ">
+                    <h1>Desempenho</h1>
+                </div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-main">
+                    <h1>7</h1>
+                </div>
+                <div class="summary-footer ">
+                    <h1>Alertas /mês</h1>
+                </div>
             </div>
         </section>
-        <div id="modalAdicionarMonitor" class="modal">
-            <div class="modal-content">
-                <div class="header-modal">
-                    <span class="close" id="closeAdicionarMonitor">&times;</span>
-                </div>
-                    <iframe src="cadastro-funcionario.html" width="598" height="500"  frameborder="0"></iframe>
+
+        <section class="temp-container">
+            <div class="left-temp">
+                <h4>Temperatura Média (°C)</h4>
+                <section>
+                    <canvas id="lm35Temperatura"></canvas>
+                </section>
             </div>
-        </div>
+            <div class="right-temp">
+                <div class="header-right-temp">
+                    <canvas id="qtdLm35"></canvas>
+                </div>
+                <h4>Informação Geral</h4>
+                <section class="info-right-temp">
+                    <table class="table-temp">
+                        <tr>
+                            <th>Sensores</th><th>Desempenho</th><th>Modelo</th><th>Medição</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                11/1
+                            </td>
+                            <td>
+                                91%
+                            </td>
+                            <td>
+                                LM35
+                            </td>
+                            <td>
+                                Temperatura (°C)
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+            </div>
+        </section>
+
+        <section class="umid-container">
+            <div class="left-umid">
+                <h4>Umidade Média (%)</h4>
+                <section>
+                    <canvas id="dht11Umidade"></canvas>
+                </section>
+            </div>
+            <div class="right-umid">
+                <div class="header-right-umid">
+                    <canvas id="qtdDht11"></canvas>
+                </div>
+                <h4>Informação Geral</h4>
+                <section class="info-right-umid">
+                    <table class="table-umid">
+                        <tr>
+                            <th>Sensores</th><th>Desempenho</th><th>Modelo</th><th>Medição</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                21/9
+                            </td>
+                            <td>
+                                57%
+                            </td>
+                            <td>
+                                DHT11
+                            </td>
+                            <td>
+                                Umidade
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+            </div>
+            </div>
+        </section>
     </main>
+
 </body>
 
 </html>

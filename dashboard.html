@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 <link rel="shortcut icon" href="./icon/organizacao-_1_.ico">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +11,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
     <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- estático js script -->
     <script src="./js/side-bar.js" defer></script>
     <script src="./js/graficos-simulativo-dashboard.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
 
@@ -70,24 +71,29 @@
                         <li class="accordion-subitem">
                             <a href="./gerenciar-monitor.html"><img width="10" style="transform: rotate(270deg);"
                                     height="10" src="https://img.icons8.com/material-outlined/24/FFFFFF/left-down2.png"
-                                    alt="left-down2" />&nbsp;Monitor</a>
+                                    alt="left-down2" />&nbsp;Gestor</a>
+                        </li>
+                        <li class="accordion-subitem">
+                            <a href="./gerenciar-funcionario.html"><img width="10" style="transform: rotate(270deg);"
+                                    height="10" src="https://img.icons8.com/material-outlined/24/FFFFFF/left-down2.png"
+                                    alt="left-down2" />&nbsp;Funcionário</a>
                         </li>
                     </ul>
                 </li>
                 <li class="accordion-item">
-                    <div class="accordion-item-header">
+                    <div class="accordion-item-header alerta-item">
                         <img width="17" height="17" src="https://img.icons8.com/material-outlined/24/FFFFFF/address.png"
                             alt="address" />
                         <span>Complexo</span>
                     </div>
-                    <ul class="accordion-submenu">
+                    <ul class="accordion-submenu ">
                         <li class="accordion-subitem">
-                            <a href="fazenda.html"><img width="10" style="transform: rotate(270deg);" height="10"
+                            <a href="fazenda.html" class="alerta-item"><img width="10" style="transform: rotate(270deg);" height="10"
                                     src="https://img.icons8.com/material-outlined/24/FFFFFF/left-down2.png"
                                     alt="left-down2" />&nbsp;Fazenda X</a>
                         </li>
                         <li class="accordion-subitem">
-                            <a href="fazenda.html"><img width="10" style="transform: rotate(270deg);" height="10"
+                            <a href="fazenday.html"><img width="10" style="transform: rotate(270deg);" height="10"
                                     src="https://img.icons8.com/material-outlined/24/FFFFFF/left-down2.png"
                                     alt="left-down2" />&nbsp;Fazenda Y</a>
                         </li>
@@ -174,7 +180,7 @@
             <div class="summary-card">
                 <div class="summary-main" id="temp-card">
                     <span>Alerta: Temperatura</span>
-                    <h1 id="critico-titulo"></h1>
+                    <h1 id="critico-titulo-temp"></h1>
                 </div>
                 <div class="summary-footer ">
                     <h1>Crítico: Fazenda X</h1>
@@ -191,7 +197,7 @@
             </div>
             <div class="summary-card">
                 <div class="summary-main">
-                    <span>Médio</span>
+                    <span>Alto</span>
                     <h1 id="desempenho-titulo"></h1>
                 </div>
                 <div class="summary-footer ">
@@ -209,7 +215,7 @@
             </div>
         </section>
 
-        
+
         <div class="DesempenhoRegistroGraficos">
             <section class="desempenho-container">
                 <div class="desempenho-grafico">

@@ -1,8 +1,8 @@
-var openModalAdicionar = document.querySelector('#openModalAdicionar')
+var openModalAdicionarMonitor = document.querySelector('#openModalAdicionarMonitor')
 var modalAdicionarMonitor = document.querySelector('#modalAdicionarMonitor');
 var closeAdicionarMonitor = document.querySelector('#closeAdicionarMonitor');
 
-openModalAdicionar.addEventListener('click', function(){
+openModalAdicionarMonitor.addEventListener('click', function(){
     modalAdicionarMonitor.classList.toggle('active');
 })
 
