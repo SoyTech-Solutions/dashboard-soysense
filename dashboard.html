@@ -186,6 +186,16 @@
                     <h1>Crítico: Fazenda X</h1>
                 </div>
             </div>
+            <!-- id="desempenho-titulo" -->
+            <div class="summary-card">
+                <div class="summary-main">
+                    <span>Alerta: Umidade</span>
+                    <h1>10%</h1> 
+                </div>
+                <div class="summary-footer ">
+                    <h1>Crítico: Fazenda Y</h1>
+                </div>
+            </div>
             <div class="summary-card">
                 <div class="summary-main" id="umid-card">
                     <span>2 fazendas</span>
@@ -195,16 +205,8 @@
                     <h1>Monitorando</h1>
                 </div>
             </div>
-            <div class="summary-card">
-                <div class="summary-main">
-                    <span>Alto</span>
-                    <h1 id="desempenho-titulo"></h1>
-                </div>
-                <div class="summary-footer ">
-                    <h1>Desempenho Total</h1>
-                </div>
-            </div>
-            <div class="summary-card">
+
+            <!-- <div class="summary-card">
                 <div class="summary-main">
                     <span>Recuperação deste mês</span>
                     <h1>R$5129,92</h1>
@@ -212,20 +214,11 @@
                 <div class="summary-footer ">
                     <h1>Valor Recuperado</h1>
                 </div>
-            </div>
+            </div> -->
         </section>
 
 
         <div class="DesempenhoRegistroGraficos">
-            <section class="desempenho-container">
-                <div class="desempenho-grafico">
-                    <h4>Desempenho Total (%)</h4>
-                    <section>
-                        <canvas id="desempenhoT"></canvas>
-                    </section>
-                </div>
-            </section>
-
             <section class="registro-container">
                 <div class="registro-grafico">
                     <h4>Registro de Alertas</h4>
@@ -234,10 +227,7 @@
                     </section>
                 </div>
             </section>
-        </div>
 
-
-        <div class="problemaValorGraficos">
             <section class="problemas-container">
                 <div class="problemas-grafico">
                     <h4>Fazendas com problemas</h4>
@@ -246,15 +236,7 @@
                     </section>
                 </div>
             </section>
-
-            <section class="valor-container">
-                <div class="valor-grafico">
-                    <h4>Valor recuperado</h4>
-                    <section>
-                        <canvas id="valorRecuperado"></canvas>
-                    </section>
-                </div>
-            </section>
+        </div>
 
         </div>
 
@@ -264,3 +246,38 @@
 
 
 </html>
+
+<!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+
+<!--  "Sections" de graficos que NÃO iremos usar -->
+
+            <!-- <section class="desempenho-container">
+                <div class="desempenho-grafico">
+                    <h4>Desempenho Total (%)</h4>
+                    <section>
+                        <canvas id="desempenhoT"></canvas>
+                    </section>
+                </div>
+            </section> -->
+
+
+            <!--  -->
+
+        <!-- <div class="GraficoFazendaProblemas"> 
+            <section class="problemas-container">
+                <div class="problemas-grafico">
+                    <h4>Fazendas com problemas</h4>
+                    <section>
+                        <canvas id="FazendasProblemas"></canvas>
+                    </section>
+                </div>
+            </section> -->
+
+            <!-- <section class="valor-container">
+                <div class="valor-grafico">
+                    <h4>Valor recuperado</h4>
+                    <section>
+                        <canvas id="valorRecuperado"></canvas>
+                    </section>
+                </div>
+            </section> -->

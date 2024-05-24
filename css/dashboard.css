@@ -19,10 +19,10 @@
 
 /* card 2 */
 .summary-card:nth-child(2) > .summary-footer{
-    background-color: #bf1fff;
+    background-color: #ff1f1f;
 }
 .summary-card:nth-child(2) > .summary-main{
-    background-color: #d678fc;
+    background-color: #ff0000;
     color: #fff;
 }
 .summary-card:nth-child(2) > .summary-main > span{
@@ -68,8 +68,105 @@
     padding: 10px;
 }
 
+/* Gráfico das fazendas com problemas */
+
+.problemas-container{
+    width: 90%;
+    height: 410px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.problemas-container h4{
+    text-align: center;
+    font-family: 'montserrat', Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+.problemas-container section{
+    margin: 20px auto 0 auto;
+    width: 55%;
+}
+
+.problemas-grafico{
+    margin: 30px auto 30px auto;
+    width: 100%; 
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 7px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.192);
+}
+
+
+
+/* Gráfico Registro de alertas*/
+
+.registro-container{
+    width: 90%;
+    margin: 30px auto 30px auto;
+    height: 410px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+
+.registro-container h4{
+    text-align: center;
+    font-family: 'montserrat', Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+.registro-container section{
+    margin: 20px 20px 0 20px;
+    width: 90%;
+    height: 80%;
+}
+
+.registro-grafico{
+    width: 100%; 
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 7px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.192);
+}
+
+/* div mãe dos gráficos Valor recuperado e problema nas fazenda */
+
+.DesempenhoRegistroGraficos{
+    width: 90%;
+    display: flex;
+    height: auto;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 10px;
+}
+
+#RegistroA{
+    display: block;
+    box-sizing: border-box;
+    height: 300px;
+    width: 300px;
+}
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+
+/*CSS dos graficos que NÃO vamos usar*/
+
+/* .GraficoFazendaProblemas {
+    width: 50%;
+    display: flex;
+    height: auto;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 10px;
+} */
+
 /* grafico de desempenho total*/
-.desempenho-container{
+/* .desempenho-container{
     width: 90%;
     height: 410px;
     margin: 30px auto 30px auto;
@@ -92,39 +189,9 @@
     background-color: #ffffff;
     border-radius: 7px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.192);
-}
+} */
 
-/* Gráfico das fazendas com problemas */
-
-.problemas-container{
-    width: 90%;
-    height: 410px;
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-}
-
-.problemas-container h4{
-    text-align: center;
-    font-family: 'montserrat', Arial, Helvetica, sans-serif;
-    margin-top: 20px;
-}
-
-.problemas-container section{
-    margin: 20px auto 0 auto;
-    width: 55%;
-}
-
-.problemas-grafico{
-    width: 100%; 
-    height: 100%;
-    background-color: #ffffff;
-    border-radius: 7px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.192);
-}
-
-
-/* Gráfico do Valor Recuperado por mês */
+/* Gráfico do Valor Recuperado por mês
 
 .valor-container{
     width: 90%;
@@ -151,64 +218,4 @@
     background-color: #ffffff;
     border-radius: 7px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.192);
-}
-
-/* Gráfico Registro de alertas*/
-
-.registro-container{
-    width: 90%;
-    margin: 30px auto 30px auto;
-    height: 410px;
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-}
-
-
-.registro-container h4{
-    text-align: center;
-    font-family: 'montserrat', Arial, Helvetica, sans-serif;
-    margin-top: 20px;
-}
-
-.registro-container section{
-    margin: 20px 20px 0 20px;
-    width: 90%;
-    height: 80%;
-}
-
-.registro-grafico{
-    width: 100%; 
-    height: 100%;
-    background-color: #ffffff;
-    border-radius: 7px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.192);
-}
-
-/* div mãe dos gráficos Valor recuperado e problema nas fazenda */
-
-.problemaValorGraficos {
-    width: 90%;
-    display: flex;
-    height: auto;
-    justify-content: center;
-    margin: 0 auto;
-    gap: 10px;
-}
-
-.DesempenhoRegistroGraficos{
-    width: 90%;
-    display: flex;
-    height: auto;
-    justify-content: center;
-    margin: 0 auto;
-    gap: 10px;
-}
-
-#RegistroA{
-    display: block;
-    box-sizing: border-box;
-    height: 300px;
-    width: 300px;
-}
-
+} */

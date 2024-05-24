@@ -1,44 +1,3 @@
-
-
-/*----Desempenho total por mes */
-var contextoDesempenhoT = document.getElementById('desempenhoT').getContext('2d');
-var desempenhoT = new Chart(
-    contextoDesempenhoT,
-    {
-        type: 'bar',
-        data: {
-            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho',
-                'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-            datasets: [{
-                label: 'Desempenho',
-                data: [90, 90, 88, 79, 93, 95, 78, 81, 70, 88, 83, 90],
-                backgroundColor:
-                    [
-                        '#1d7fff',
-                        '#1d7fff',
-                        '#1d7fff',
-                        '#1d7fff',
-                        '#1d7fff',
-                        '#1d7fff',
-                        '#1d7fff',
-                        '#1d7fff',
-                        '#1d7fff',
-                        '#1d7fff',
-                        '#1d7fff',
-                        '#1d7fff',
-                    ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-
 /* Fazendas com problemas */
 
 var FazendasProblemas = document.getElementById('FazendasProblemas').getContext('2d');
@@ -53,8 +12,8 @@ var Problemas =
                             data: [11, 7],
         
                             backgroundColor: [
-                               '#8B008B',
-                               '#00008B',
+                               '#69E056',
+                               '#FFF857',
                             ],
         
                             borderWidth: 1
@@ -69,36 +28,7 @@ var Problemas =
                     }
                 });
 
-/* Valor recuperado no mês */
 
-var valorRecuperado = document.getElementById('valorRecuperado').getContext('2d');
-var valor = 
-    new Chart(valorRecuperado,        
-        {
-            type: 'line',
-            data: {
-                labels: ['Novembro/2023','Dezembro/2023','Janeiro/2024', 'Fevereiro/2024', 'Março/2024', 'Abril/2024'],
-                datasets: [{
-                    label: 'Valor em R$',
-                    fill: true,
-                    data: [5013.24, 4751.85, 4955.41, 5472.14, 4875.27, 5129.92],
-
-                    backgroundColor: [
-                       '#33BE33AA',
-                    ],
-
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-        
 /* Registros d Alerts*/
 
 var RegistroA = document.getElementById('RegistroA').getContext('2d');
@@ -128,19 +58,89 @@ var valor =
                         data: [1,5,0,0,9,3,2,7,11,3,2,8],
                         borderWidth: 3,
                         pointRadius: 0,
-                        backgroundColor: "#ff110082",
-                        borderColor: "#ff6384"
+                        backgroundColor: '#69E056',
+                        borderColor: '#69E056'
                     },
                     {
                         label: 'Fazenda Y',
                         data: [0,3,4,3,6,4,8,2,1,7,6,4],
                         borderWidth: 3,
                         pointRadius: 0,
-                        backgroundColor: 'rgb(75, 192, 192)',
-                        borderColor: 'rgb(75, 192, 192)'
+                        backgroundColor: '#FFF857',
+                        borderColor: '#FFF857'
                         
                     }
                 ]
+
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+
+var tempTitle = document.querySelector('#critico-titulo-temp');
+var desTitle = document.querySelector('#desempenho-titulo');
+
+
+setInterval(() => {
+    let minTemp = 30;
+    let maxTemp = 35;
+
+    let minDes = 90;
+    let maxDes = 100;
+    
+    let temperatura = parseInt(Math.random() * (maxTemp - minTemp) + minTemp);
+    let desempenho = parseInt(Math.random() * (maxDes - minDes) + minDes);
+
+    tempTitle.textContent = `
+         ${temperatura}°C
+    `
+    desTitle.textContent = `
+         ${desempenho}%
+    `
+
+}, 1000);
+/*-----------------------------------------------------------------------------------------------------------------------*/
+
+/*JS dos graficos que NÃO iremos usar*/
+
+/* Valor recuperado no mês */
+
+// var valorRecuperado = document.getElementById('valorRecuperado').getContext('2d');
+// var valor = 
+//     new Chart(valorRecuperado,        
+//         {
+//             type: 'line',
+//             data: {
+//                 labels: ['Novembro/2023','Dezembro/2023','Janeiro/2024', 'Fevereiro/2024', 'Março/2024', 'Abril/2024'],
+//                 datasets: [{
+//                     label: 'Valor em R$',
+//                     fill: true,
+//                     data: [5013.24, 4751.85, 4955.41, 5472.14, 4875.27, 5129.92],
+
+//                     backgroundColor: [
+//                        '#33BE33AA',
+//                     ],
+
+//                     borderWidth: 1
+//                 }]
+//             },
+//             options: {
+//                 scales: {
+//                     y: {
+//                         beginAtZero: true
+//                     }
+//                 }
+//             }
+//         });
+        
+/*-----------------------------------------------------------------------------------------------------------------------*/
+/* Registro de Alerts alternativo*/
 
             // type: 'radar',
             // data: {
@@ -191,36 +191,43 @@ var valor =
             //         pointHoverBackgroundColor: '#fff',
             //         pointHoverBorderColor: 'rgb(54, 162, 235)'
             //       }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
+/*-----------------------------------------------------------------------------------------------------------------------*/
 
-
-var tempTitle = document.querySelector('#critico-titulo-temp');
-var desTitle = document.querySelector('#desempenho-titulo');
-
-
-setInterval(() => {
-    let minTemp = 30;
-    let maxTemp = 35;
-
-    let minDes = 90;
-    let maxDes = 100;
-    
-    let temperatura = parseInt(Math.random() * (maxTemp - minTemp) + minTemp);
-    let desempenho = parseInt(Math.random() * (maxDes - minDes) + minDes);
-
-    tempTitle.textContent = `
-         ${temperatura}°C
-    `
-    desTitle.textContent = `
-         ${desempenho}%
-    `
-
-}, 1000);
+            /*----Desempenho total por mes */
+// var contextoDesempenhoT = document.getElementById('desempenhoT').getContext('2d');
+// var desempenhoT = new Chart(
+//     contextoDesempenhoT,
+//     {
+//         type: 'bar',
+//         data: {
+//             labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho',
+//                 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+//             datasets: [{
+//                 label: 'Desempenho',
+//                 data: [90, 90, 88, 79, 93, 95, 78, 81, 70, 88, 83, 90],
+//                 backgroundColor:
+//                     [
+//                         '#1d7fff',
+//                         '#1d7fff',
+//                         '#1d7fff',
+//                         '#1d7fff',
+//                         '#1d7fff',
+//                         '#1d7fff',
+//                         '#1d7fff',
+//                         '#1d7fff',
+//                         '#1d7fff',
+//                         '#1d7fff',
+//                         '#1d7fff',
+//                         '#1d7fff',
+//                     ],
+//                 borderWidth: 1
+//             }]
+//         },
+//         options: {
+//             scales: {
+//                 y: {
+//                     beginAtZero: true
+//                 }
+//             }
+//         }
+//     });
