@@ -35,10 +35,12 @@
 
 /* card 3 */
 .summary-card:nth-child(3) > .summary-footer{
-    background-color: #1d7fff;
+    background-color: #33be33;
+    
 }
 .summary-card:nth-child(3) > .summary-main{
-    background-color: hsl(214, 100%, 70%);
+    background-color: #5cb85cad;
+   
     color: #ffffff;
 }
 .summary-card:nth-child(3) > .summary-main > span{
@@ -50,24 +52,45 @@
 }
 /* card 4 */
 .summary-card:nth-child(4) > .summary-footer{
-    background-color: #33be33;
+    background-color: #ffc800;
+    
 }
 .summary-card:nth-child(4) > .summary-main{
-    background-color: #5cb85cad;
+    background-color: hsl(47, 100%, 68%);
+   
     color: #FFF;
 }
 .summary-card:nth-child(4) > .summary-main > span{
     font-weight: bolder;
 }
 .summary-card:nth-child(4) > .summary-main h1{
-    font-size: 40px;
-    margin-top: 15px;
+    font-size: 25px;
+    margin-top: 25px;
 }
 .summary-main{
     height: calc(100% - 50px);
     padding: 10px;
 }
 
+/* card 4 */
+.summary-card:nth-child(5) > .summary-footer{
+    background-color: #ffb217;
+}
+.summary-card:nth-child(5) > .summary-main{
+    background-color: #fecb66;
+    color: #FFF;
+}
+.summary-card:nth-child(5) > .summary-main > span{
+    font-weight: bolder;
+}
+.summary-card:nth-child(5) > .summary-main h1{
+    font-size: 25px;
+    margin-top: 25px;
+}
+.summary-main{
+    height: calc(100% - 50px);
+    padding: 10px;
+}
 /* Gráfico das fazendas com problemas */
 
 .problemas-container{
